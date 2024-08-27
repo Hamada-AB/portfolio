@@ -18,9 +18,11 @@ export default function App() {
     <div>
       <header>
         <div className="logo">HA</div>
+
         <div className="menu-icon" onClick={toggleModal}>
           &#9776; {/* This is the menu icon */}
         </div>
+
         <nav className="desktop-nav">
           <Link to="home" smooth={true} duration={500}>
             {language === "EN" ? "Home" : "Home"}
@@ -34,13 +36,16 @@ export default function App() {
           <Link to="contact" smooth={true} duration={500}>
             {language === "EN" ? "Contact" : "Contatti"}
           </Link>
+        </nav>
+
+        <div className="header-btns">
           <button onClick={toggleLanguage} className="language-toggle">
             {language === "EN" ? "IT" : "EN"}
           </button>
           <button className="contact-button">
             {language === "EN" ? "Contact Me" : "Contattami"}
           </button>
-        </nav>
+        </div>
       </header>
 
       {/* Modal for Mobile Navigation */}
@@ -97,19 +102,13 @@ export default function App() {
       <main>
         <section id="home" className="home-section">
           <div className="home-content">
-            <h1>
-              {language === "EN" ? "Hi! I am Hamada" : "Ciao! Sono Hamada"}
-            </h1>
-            <p>
-              {language === "EN"
-                ? "I am a full-stack web developer"
-                : "Sono uno sviluppatore web full stack"}
-            </p>
+            <h1>{language === "EN" ? "Hello! " : "Ciao! "}</h1>
+            <h1>{language === "EN" ? "I am Hamada" : "Sono Hamada"}</h1>
           </div>
         </section>
 
         <section id="about-me">
-          <h2>{language === "EN" ? "About Me" : "Su di me"}</h2>
+          <h2>{language === "EN" ? "About Me" : "About Me"}</h2>
           <p>
             {language === "EN"
               ? "This is the About Me section."
