@@ -2,24 +2,17 @@ import { useState, useEffect } from "react";
 import { Link, Element } from "react-scroll";
 import { useSpring, animated } from "react-spring";
 
+import { ps } from "./assets/content/home";
+
 export default function Home({ language }) {
   const [currentParagraph, setCurrentParagraph] = useState(0);
 
   const paragraphs = [
-    language === "EN"
-      ? `I'm a junior web developer with a passion for creating
-                  responsive, user-friendly websites.`
-      : `Sono uno sviluppatore web junior con una passione per la creazione di siti web responsivi e facili da usare.`,
-    language === "EN"
-      ? `I'm dedicated to writing clean, efficient code and continuously learning new technologies.`
-      : `Mi dedico a scrivere codice pulito ed efficiente e ad apprendere continuamente nuove tecnologie.`,
-    language === "EN"
-      ? "I love coding and solving problems."
-      : "Amo programmare e risolvere problemi.",
-    language === "EN" ? "I am located in Italy." : "Risiedo in Italia.",
-    language === "EN"
-      ? "Let’s build something amazing together!"
-      : "Costruiamo insieme qualcosa di straordinario!",
+    language === "EN" ? ps.one.en : ps.one.it,
+    language === "EN" ? ps.two.en : ps.two.it,
+    language === "EN" ? ps.three.en : ps.three.it,
+    language === "EN" ? ps.four.en : ps.four.it,
+    language === "EN" ? ps.five.en : ps.five.it,
   ];
 
   const h1Spring = useSpring({
