@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 // Components
 import Navbar from "./Navbar";
@@ -7,6 +7,21 @@ import MenuModal from "./MenuModal";
 export default function Header({ language, setLanguage }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
+  const [position, setPosition] = useState(0);
+
+  console.log(position);
+
+  function getPosition() {
+    setPosition(window.scrollY);
+  }
+
+  useEffect(() => {
+    window.addEventListener("scroll", getPosition);
+
+    return () => {
+      window.removeEventListener("scroll", getPosition);
+    };
+  }, []);
 
   const toggleLanguage = () => {
     setLanguage((prevLanguage) => (prevLanguage === "EN" ? "IT" : "EN"));
@@ -23,7 +38,7 @@ export default function Header({ language, setLanguage }) {
 
   return (
     <>
-      <header>
+      <header className={position > 700 ? "scroll-down" : ""}>
         <div className="logo">HA</div>
         <div className="menu-icon" onClick={toggleModal}>
           &#9776;

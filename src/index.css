@@ -38,12 +38,19 @@ header {
   align-items: center;
   padding: 20px 40px;
 
+  transition: all 900ms ease;
+  z-index: 100;
+}
+
+header.scroll-down {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
+  box-shadow: 0 30px 150px #d5808026, 0 10px 50px #67aeff23;
+  transform: translateY(-10px);
   background-color: #010200;
-  z-index: 100;
+  z-index: 200;
 }
 
 .logo {
@@ -84,12 +91,20 @@ section {
   cursor: pointer;
 }
 
-/***** Language and Contact Buttons *****/
+/***** Language Button *****/
+
 .language-toggle {
-  padding: 5px 7px;
-  border: none;
-  border-radius: 4px;
   cursor: pointer;
+  padding: 4px 8px;
+  color: white;
+  background-color: #d58080;
+  border: none;
+  border-radius: 3px;
+  transition: background-color 300ms;
+}
+
+.language-toggle:hover {
+  background-color: #95c1f2;
 }
 
 /* Modal Styles */
@@ -154,27 +169,14 @@ section {
   border-radius: 4px;
 }
 
-.language-toggle {
-  background-color: #d58080;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 300ms;
-}
-
-.language-toggle:hover {
-  background-color: #95c1f2;
-}
-
 /***** Home Section *****/
 .home-section {
-  margin-top: 80px;
+  margin-top: 0;
+  padding: 0 40px;
+  height: 100vh;
+
   display: flex;
   flex-direction: column;
-
-  height: 100vh;
-  padding: 0 40px;
 
   background-image: url("./assets/image/bg-image-wide.jpg");
   background-size: cover;
@@ -223,7 +225,7 @@ section {
   width: fit-content;
   cursor: pointer;
   border: 2px solid #d58080;
-  border-radius: 35px;
+  border-radius: 0 35px 35px 0;
 
   color: #d58080;
   background-color: transparent;
@@ -251,8 +253,9 @@ footer {
 
 /***** Responsive Styles ******/
 @media (max-width: 855px) {
-  header {
-    padding: 20px 20px;
+  header,
+  .home-section {
+    padding: 20px 10px;
   }
   .desktop-nav,
   .header-btns {
@@ -267,7 +270,6 @@ footer {
     max-height: 680px;
     background-size: 140%;
     background-repeat: no-repeat;
-    padding: 20px 20px;
   }
 
   .home-content {
@@ -289,5 +291,6 @@ footer {
     align-self: center;
     margin-top: 270px;
     font-size: 1rem;
+    border-radius: 35px;
   }
 }
