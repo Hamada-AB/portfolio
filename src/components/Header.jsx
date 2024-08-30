@@ -1,4 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import clsx from "clsx";
+import parse from "html-react-parser";
+
+import { icons } from "../assets/icon/home";
 
 // Components
 import Navbar from "./Navbar";
@@ -7,21 +11,12 @@ import MenuModal from "./MenuModal";
 export default function Header({ language, setLanguage }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
-  const [position, setPosition] = useState(0);
 
-  console.log(position);
-
-  function getPosition() {
-    setPosition(window.scrollY);
-  }
-
-  useEffect(() => {
-    window.addEventListener("scroll", getPosition);
-
-    return () => {
-      window.removeEventListener("scroll", getPosition);
-    };
-  }, []);
+  const headerClass = clsx({
+    "header-about": activeSection === "about-me",
+    "header-projects": activeSection === "projects",
+    "header-contact": activeSection === "contact",
+  });
 
   const toggleLanguage = () => {
     setLanguage((prevLanguage) => (prevLanguage === "EN" ? "IT" : "EN"));
@@ -38,8 +33,8 @@ export default function Header({ language, setLanguage }) {
 
   return (
     <>
-      <header className={position > 700 ? "scroll-down" : ""}>
-        <div className="logo">HA</div>
+      <header className={headerClass}>
+        <div className="logo">{parse(icons.mix)}</div>
         <div className="menu-icon" onClick={toggleModal}>
           &#9776;
         </div>

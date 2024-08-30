@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, Element } from "react-scroll";
 import { useSpring, animated } from "react-spring";
 
-import { ps } from "./assets/content/home";
+import { ps } from "../assets/content/home";
 
 export default function Home({ language }) {
   const [currentParagraph, setCurrentParagraph] = useState(0);
@@ -63,7 +63,7 @@ export default function Home({ language }) {
           duration={500}
           className="contact-btn-main"
         >
-          {language === "EN" ? "Contact Me" : "Contattami"}
+          {language === "EN" ? "CONTACT ME" : "CONTATTAMI"}
         </Link>
       </section>
     </Element>

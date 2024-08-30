@@ -11,7 +11,7 @@ export default function Navbar({ language, activeSection, handleSetActive }) {
         className={activeSection === "home" ? "active" : ""}
         onSetActive={() => handleSetActive("home")}
       >
-        {language === "EN" ? "Home" : "Home"}
+        {language === "EN" ? "HOME" : "HOME"}
       </Link>
       <Link
         to="about-me"
@@ -21,7 +21,7 @@ export default function Navbar({ language, activeSection, handleSetActive }) {
         className={activeSection === "about-me" ? "active" : ""}
         onSetActive={() => handleSetActive("about-me")}
       >
-        {language === "EN" ? "About Me" : "Su di me"}
+        {language === "EN" ? "ABOUT ME" : "ABOUT ME"}
       </Link>
       <Link
         to="projects"
@@ -31,7 +31,7 @@ export default function Navbar({ language, activeSection, handleSetActive }) {
         className={activeSection === "projects" ? "active" : ""}
         onSetActive={() => handleSetActive("projects")}
       >
-        {language === "EN" ? "Projects" : "Progetti"}
+        {language === "EN" ? "PROJECTS" : "PROGETTI"}
       </Link>
       <Link
         to="contact"
@@ -41,7 +41,7 @@ export default function Navbar({ language, activeSection, handleSetActive }) {
         className={activeSection === "contact" ? "active" : ""}
         onSetActive={() => handleSetActive("contact")}
       >
-        {language === "EN" ? "Contact" : "Contatti"}
+        {language === "EN" ? "CONTACT" : "CONTATTI"}
       </Link>
     </nav>
   );

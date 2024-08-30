@@ -1,9 +1,35 @@
+@import url("./style/about.css");
+
+/*****  poppins font family *****/
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
-:root {
+/****** DM Sans font  */
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+
+/***** Montserrat *****/
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+:root {
+  --montseraat: "Montserrat", sans-serif;
+  --poppins: "Poppins", sans-serif;
+  --padding-h: 60px;
+  --padding-v: 20px;
+  --bg-color1: #010200;
+  --bg-color2: #010200;
+  --bg-color3: #444;
+  --color-1: #a6a6a6;
+  --color-2: #bababa;
+  --primary-c: #d58080;
+  --secodary-c1: #67aeff;
+  --secondary-c2: #95c1f2;
+  --home-p-c: #d2e7ff;
+  --p-line-height: 1.5;
 }
 
 ::-webkit-scrollbar {
@@ -11,56 +37,67 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #191919;
+  background: var(--bg-color1);
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #444;
+  background-color: var(--bg-color2);
   border-radius: 6px;
-  border: 1px solid #95c0f278;
+  border: 1px solid var(--secondary-c2);
+}
+
+html {
+  font-family: var(--montseraat);
+  scroll-behavior: smooth;
+  background-color: var(--bg-color1);
+  color: var(--color-1);
 }
 
 button {
   cursor: pointer;
 }
 
-body,
-html {
-  font-family: "Poppins", sans-serif;
-  scroll-behavior: smooth;
-  background-color: #010200;
-  color: #bababa;
-}
-
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 40px;
 
-  transition: all 900ms ease;
-  z-index: 100;
-}
+  padding: var(--padding-v) var(--padding-h);
 
-header.scroll-down {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  box-shadow: 0 30px 150px #d5808026, 0 10px 50px #67aeff23;
+
+  background-color: var(--bg-color1);
+  transition: all 900ms ease;
+  z-index: 100;
+  font-size: 16px;
+}
+
+.header-about {
+  box-shadow: 0 0px 50px #d5808083, 0 0px 150px #67aeff85;
   transform: translateY(-10px);
-  background-color: #010200;
   z-index: 200;
 }
 
-.logo {
+.header-projects {
+  box-shadow: 0 0px 50px #d5808050, 0 0px 150px #95c0f255;
+  transform: translateY(-10px);
+  z-index: 200;
+}
+
+.header-contact {
+  box-shadow: 0 0px 50px #d5808024, 0 0px 150px #95c0f227;
+  transform: translateY(-10px);
+  z-index: 200;
 }
 
 .desktop-nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 35px;
+  gap: 40px;
 }
 
 .desktop-nav a {
@@ -68,20 +105,15 @@ header.scroll-down {
   text-decoration: none;
   transition: color 300ms;
   padding: 7px 0;
-
   transition: color 0.3s ease;
 }
 
 .desktop-nav a:hover {
-  color: #d58080;
+  color: var(--primary-c);
 }
 
 .desktop-nav a.active {
-  border-bottom: 1.5px solid #d58080;
-}
-
-section {
-  height: 100vh;
+  border-bottom: 1.5px solid var(--primary-c);
 }
 
 /***** Mobile Menu Icon *****/
@@ -96,15 +128,16 @@ section {
 .language-toggle {
   cursor: pointer;
   padding: 4px 8px;
-  color: white;
-  background-color: #d58080;
+  color: #fff;
+  font-size: 14px;
+  background-color: var(--primary-c);
   border: none;
   border-radius: 3px;
   transition: background-color 300ms;
 }
 
 .language-toggle:hover {
-  background-color: #95c1f2;
+  background-color: var(--secondary-c2);
 }
 
 /* Modal Styles */
@@ -114,10 +147,12 @@ section {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: var(--bg-color1);
+
   display: flex;
   justify-content: flex-end;
   align-items: center;
+
   transform: translateX(100%);
   transition: transform 0.3s ease-in-out;
   z-index: 100;
@@ -128,7 +163,7 @@ section {
 }
 
 .modal-content {
-  background-color: #191919;
+  background-color: var(--bg-color3);
   width: 75%;
   max-width: 300px;
   height: fit-content;
@@ -165,27 +200,26 @@ section {
 
 .mobile-nav a:hover,
 .mobile-nav button:hover {
-  background-color: #444;
+  background-color: var(--primary-c);
+  color: var(--bg-color3);
   border-radius: 4px;
 }
 
 /***** Home Section *****/
 .home-section {
-  margin-top: 0;
-  padding: 0 40px;
+  margin-top: 60px;
+
+  padding: 0 var(--padding-h);
   height: 100vh;
 
   display: flex;
   flex-direction: column;
+  justify-content: center;
 
   background-image: url("./assets/image/bg-image-wide.jpg");
   background-size: cover;
   background-position: right center;
   background-repeat: no-repeat;
-}
-
-.home-content {
-  padding-top: 70px;
 }
 
 .heading {
@@ -194,28 +228,28 @@ section {
 }
 
 .heading h1 {
-  margin: 0;
-  padding: 0;
-
   font-size: 4.5rem;
+  font-family: var(--poppins);
   font-weight: 700;
 
-  background: -webkit-linear-gradient(#67aeff, #d58080);
+  background: -webkit-linear-gradient(var(--secodary-c1), var(--primary-c));
   background-clip: text;
   -webkit-text-fill-color: transparent;
   z-index: 1;
 }
 
 .p-container {
-  height: 100px;
-}
-
-.p-container p {
-  max-width: 700px;
-  color: #d2e7ff;
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+  height: 80px;
 }
 
 .home-content p {
+  max-width: 700px;
+  color: var(--home-p-c);
+  font-weight: 450;
+  line-height: var(--p-line-height);
   font-size: 1rem;
   margin-top: -10px;
   margin-bottom: 60px;
@@ -224,25 +258,21 @@ section {
 .contact-btn-main {
   width: fit-content;
   cursor: pointer;
-  border: 2px solid #d58080;
+  border: 2px solid var(--secondary-c2);
   border-radius: 0 35px 35px 0;
 
-  color: #d58080;
+  color: var(--secondary-c2);
   background-color: transparent;
 
   padding: 12px 18px;
 
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   transition: color 300ms, border-color 300ms;
 }
 
 .contact-btn-main:hover {
-  color: #95c1f2;
-  border-color: #95c1f2;
-}
-
-main section {
-  padding: 60px 20px;
+  color: var(--primary-c);
+  border-color: var(--primary-c);
 }
 
 footer {
@@ -267,7 +297,7 @@ footer {
   }
 
   .home-section {
-    max-height: 680px;
+    margin-top: 20px;
     background-size: 140%;
     background-repeat: no-repeat;
   }
@@ -275,6 +305,7 @@ footer {
   .home-content {
     padding-top: 0;
     margin-top: 0;
+    margin-bottom: 0px;
   }
 
   .home-content h1 {
