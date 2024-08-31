@@ -1,7 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 import { Element } from "react-scroll";
-
 import portfolioImg from "../assets/image/my-photo.jpg";
+
+// Components
+import TechCarousel from "./TechCarousel";
+
 export default function About({ language }) {
   const sectionRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
@@ -43,9 +46,14 @@ export default function About({ language }) {
         className={`about-me ${isVisible ? "visible" : ""}`}
       >
         <div className="welcome">
-          <p>{language === "EN" ? "ABOUT ME" : "ABOUT ME"}</p>
-          <h2>{language === "EN" ? "HELLO THERE!" : "CIAO!"}</h2>
+          <h2>{language === "EN" ? "ABOUT ME" : "ABOUT ME"}</h2>
+          <p>
+            {language === "EN"
+              ? "Versatile. Innovative. Ambitious."
+              : "Versatile. Innovativo. Ambizioso."}
+          </p>
         </div>
+
         <div className="content-container">
           <div className="my-photo-container">
             <img className="my-photo" src={portfolioImg} alt="a person photo" />
@@ -54,34 +62,34 @@ export default function About({ language }) {
           <div className="bio">
             {language === "EN" ? (
               <p>
-                My name is Hamada Abdelaal. I&#39;m a junior full-stack
-                developer based in Italy. I&#39;m passionate about creating
-                useful and aesthetically pleasing applications for our
-                ever-evolving tech world. I recently completed a six-month
-                coding bootcamp at
+                Hello there! My name is Hamada Abdelaal. I&#39;m a junior
+                full-stack developer based in Italy. I recently completed a
+                six-month coding bootcamp at{" "}
                 <a href="https://boolean.co.uk/" target="_blank">
                   {" "}
                   Boolean&nbsp;UK
                 </a>
-                . I&#39;m constantly striving to improve my skills, using my
-                problem-solving abilities to devise clever solutions and
-                embracing daily learning opportunities.
+                , where I honed my skills in a variety of technologies. My tech
+                stack includes HTML, CSS, JavaScript, React, Node.js,
+                Express.js, Prisma, and PostgreSQL. I&#39;m passionate about
+                creating efficient and user-friendly web applications and eager
+                to apply my skills in real-world projects.
               </p>
             ) : (
               <p>
-                Mi chiamo Hamada Abdelaal. Sono uno sviluppatore full-stack
-                junior con sede in Italia. Sono appassionato di creare
-                applicazioni utili ed esteticamente gradevoli per il nostro
-                mondo tecnologico in continua evoluzione. Ho recentemente
-                completato un bootcamp di programmazione di sei mesi presso
+                Ciao! Mi chiamo Hamada Abdelaal. Sono uno sviluppatore
+                full-stack junior con sede in Italia. Ho recentemente completato
+                un bootcamp di programmazione di sei mesi presso{" "}
                 <a href="https://boolean.co.uk/" target="_blank">
                   {" "}
                   Boolean&nbsp;UK
                 </a>
-                . Mi impegno costantemente per migliorare le mie competenze,
-                utilizzando le mie capacità di problem-solving per escogitare
-                soluzioni intelligenti e abbracciando opportunità di
-                apprendimento quotidiane.
+                , dove ho affinato le mie competenze in una varietà di
+                tecnologie. Il mio stack tecnologico include HTML, CSS,
+                JavaScript, React, Node.js, Express.js, Prisma e PostgreSQL.
+                Sono appassionato di creare applicazioni web efficienti e
+                user-friendly e sono desideroso di applicare le mie competenze
+                in progetti del mondo reale.
               </p>
             )}
 
@@ -110,6 +118,7 @@ export default function About({ language }) {
             )}
           </div>
         </div>
+        <TechCarousel />
       </section>
     </Element>
   );

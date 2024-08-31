@@ -35,7 +35,7 @@
   width: fit-content;
   gap: 15px;
 
-  padding-bottom: 10px;
+  padding-bottom: 15px;
   margin-top: 100px;
 
   position: relative;
@@ -45,23 +45,23 @@
   content: "";
   position: absolute;
 
-  left: 25%;
-  right: 25%;
+  left: 0%;
+  right: 0%;
   bottom: 0;
 
   border-top: 2px solid var(--primary-c);
-  width: 25%;
+  width: 50%;
   transform: translateY(-50%) translateX(50%);
 }
 
-.welcome p {
+.welcome h2 {
   font-size: 16px;
   font-weight: 500;
 }
 
-.welcome h2 {
-  font-size: 2.5rem;
-  font-weight: 550;
+.welcome p {
+  font-size: 1.5rem;
+  font-weight: 600;
 }
 
 .content-container {
@@ -167,6 +167,48 @@
 .my-photo {
   width: 87%;
   height: auto;
+}
+
+/***** TechCarousel *****/
+
+.tech-container,
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tech-container {
+  margin-top: 30px;
+  width: 50%;
+  padding: 10px 0;
+}
+
+.card {
+  width: 80px;
+  height: auto;
+  background-color: var(--bg-color1);
+
+  border: 2.5px solid var(--bg-color3);
+  padding: 15px;
+  border-radius: 7px;
+}
+
+.card svg {
+  fill: #444;
+}
+
+.carousel-wrapper {
+  width: 90%;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  display: none !important;
+}
+
+.swiper-pagination-bullet {
+  display: none !important;
 }
 
 /***********/

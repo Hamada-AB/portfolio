@@ -34,7 +34,9 @@ export default function Header({ language, setLanguage }) {
   return (
     <>
       <header className={headerClass}>
-        <div className="logo">{parse(icons.mix)}</div>
+        <button className="logo" onClick={() => window.scrollTo(0, 0)}>
+          {parse(icons.mix)}
+        </button>
         <div className="menu-icon" onClick={toggleModal}>
           &#9776;
         </div>
