@@ -1,22 +1,6 @@
-:root {
-  --montseraat: "Montserrat", sans-serif;
-  --poppins: "Poppins", sans-serif;
-  --padding-h: 60px;
-  --padding-v: 20px;
-  --bg-color1: #010200;
-  --bg-color2: #010200;
-  --bg-color3: #444;
-  --color-1: #a6a6a6;
-  --color-2: #bababa;
-  --primary-c: #d58080;
-  --secodary-c1: #67aeff;
-  --secondary-c2: #95c1f2;
-  --home-p-c: #d2e7ff;
-  --p-line-height: 1.5;
-}
-
 .about-me {
   padding: 0px var(--padding-h);
+  margin-bottom: 80px;
 
   display: flex;
   flex-direction: column;
@@ -25,7 +9,6 @@
   gap: 50px;
 
   position: relative;
-  font-family: "Montserrat", sans-serif;
 }
 
 .welcome {
@@ -76,10 +59,6 @@
   justify-content: center;
 }
 
-.bio {
-  /* border-left: 4px solid var(--bg-color3); */
-}
-
 .bio a {
   color: var(--secodary-c1);
   text-decoration: none;
@@ -121,7 +100,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #333; /* Adjust this color */
+  background-color: #333;
   transition: transform 4s ease;
   transform: translateX(0);
   z-index: 1;
@@ -170,7 +149,6 @@
 }
 
 /***** TechCarousel *****/
-
 .tech-container,
 .card {
   display: flex;
@@ -182,6 +160,14 @@
   margin-top: 30px;
   width: 50%;
   padding: 10px 0;
+}
+
+.grab {
+  cursor: grab;
+}
+
+.grabbing {
+  cursor: grabbing;
 }
 
 .card {

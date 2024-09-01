@@ -1,0 +1,65 @@
+:root {
+  --montseraat: "Montserrat", sans-serif;
+  --poppins: "Poppins", sans-serif;
+  --padding-h: 60px;
+  --padding-v: 20px;
+  --bg-color1: #010200;
+  --bg-color2: #0e0e0e;
+  --bg-color3: #444;
+  --color-1: #a6a6a6;
+  --color-2: #bababa;
+  --primary-c: #d58080;
+  --secodary-c1: #67aeff;
+  --secondary-c2: #95c1f2;
+  --home-p-c: #d2e7ff;
+  --p-line-height: 1.5;
+}
+
+.projects-section {
+  height: 100vh;
+  background-color: var(--bg-color2);
+  padding: 0px var(--padding-h);
+  margin-bottom: 50px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: center; */
+  gap: 50px;
+}
+
+.project-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: fit-content;
+  gap: 15px;
+  align-self: center;
+
+  padding-bottom: 15px;
+  margin-top: 100px;
+  position: relative;
+}
+
+.project-header::before {
+  content: "";
+  position: absolute;
+
+  left: 0%;
+  right: 0%;
+  bottom: 0;
+
+  border-top: 2px solid var(--primary-c);
+  width: 50%;
+  transform: translateY(-50%) translateX(50%);
+}
+
+.project-header h2 {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.project-header p {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
