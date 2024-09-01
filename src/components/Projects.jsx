@@ -1,15 +1,15 @@
 import { Element } from "react-scroll";
 
-export default function Projects({ language }) {
+export default function Projects({ language, projects }) {
   return (
     <Element name="projects">
-      <section>
-        <h2>{language === "EN" ? "Projects" : "Progetti"}</h2>
-        <p>
-          {language === "EN"
-            ? "This is the Projects section."
-            : "Questa è la sezione Progetti."}
-        </p>
+      <section className="projects-section">
+        <div className="project-header">
+          <h2>{language === "EN" ? "PROJECTS" : "PROGETTI"}</h2>
+          <p>
+            {language === "EN" ? "I love what I do" : "Amo quello che faccio"}
+          </p>
+        </div>
       </section>
     </Element>
   );
