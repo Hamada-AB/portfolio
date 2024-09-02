@@ -62,7 +62,7 @@
 .bio a {
   color: var(--secodary-c1);
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 450;
   transition: color 300ms;
 }
 
@@ -75,7 +75,7 @@
   padding-left: 30px;
   margin-bottom: 30px;
   font-size: 19px;
-  word-spacing: 0.15em;
+  word-spacing: 0.1em;
   hyphens: auto;
   border-left: 4px solid var(--bg-color3);
 }

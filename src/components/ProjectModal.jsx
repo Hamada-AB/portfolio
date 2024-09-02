@@ -1,15 +1,25 @@
-export default function ProjectModal({ project, isOpen, onClose }) {
-  if (!isOpen) return null;
+import Modal from "react-modal";
 
+const ProjectModal = ({ project, isOpen, onClose }) => {
   return (
-    <div className="modal" onClick={onClose}>
-      <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-        <span className="close-button" onClick={onClose}>
-          &times;
-        </span>
+    <Modal
+      isOpen={isOpen}
+      onRequestClose={onClose}
+      contentLabel="Project Details"
+      className="project-modal-content"
+      overlayClassName="modal-overlay"
+    >
+      <div className="modal-header">
         <h2>{project?.title}</h2>
+        <button className="close-button" onClick={onClose}>
+          &times;
+        </button>
+      </div>
+      <div className="modal-body">
         <p>{project?.details}</p>
       </div>
-    </div>
+    </Modal>
   );
-}
+};
+
+export default ProjectModal;

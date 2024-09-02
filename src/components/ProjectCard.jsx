@@ -1,20 +1,44 @@
-export default function ProjectCard({ project, onDetailsClick }) {
+import { useSpring, animated } from "react-spring";
+import { useInView } from "react-intersection-observer";
+
+const ProjectCard = ({ project, onDetailsClick, index }) => {
+  // For Project Card Animation
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
+  const animationProps = useSpring({
+    opacity: inView ? 1 : 0,
+    transform: inView
+      ? "translateX(0)"
+      : `translateX(${index % 2 === 0 ? "-150px" : "150px"})`,
+    config: { mass: 1, tension: 120, friction: 80 },
+  });
+
   return (
-    <div
-      className="project-card"
-      style={{ backgroundImage: `url(${project?.image})` }}
-    >
-      <div className="overlay">
-        <button
-          className="btn live-demo"
-          onClick={() => window.open(project.liveDemo, "_blank")}
-        >
-          Live Demo
-        </button>
-        <button className="btn details" onClick={() => onDetailsClick(project)}>
-          Details
-        </button>
+    <animated.div ref={ref} style={animationProps}>
+      <div
+        className="project-card"
+        style={{ backgroundImage: `url(${project.image})` }}
+      >
+        <div className="overlay">
+          <button
+            className="btn live-demo"
+            onClick={() => window.open(project.liveDemo, "_blank")}
+          >
+            Live Demo
+          </button>
+          <button
+            className="btn details"
+            onClick={() => onDetailsClick(project)}
+          >
+            Details
+          </button>
+        </div>
       </div>
-    </div>
+    </animated.div>
   );
-}
+};
+
+export default ProjectCard;
