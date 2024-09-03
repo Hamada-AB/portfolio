@@ -18,7 +18,7 @@ const ProjectCard = ({ project, onDetailsClick, index }) => {
     <animated.div ref={ref} style={animationProps}>
       <div
         className="project-card"
-        style={{ backgroundImage: `url(${project.image})` }}
+        style={{ backgroundImage: `url("${project.image}")` }}
       >
         <div className="overlay">
           <button
