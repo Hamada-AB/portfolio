@@ -10,10 +10,8 @@ const ProjectCard = ({ project, onDetailsClick, index }) => {
 
   const animationProps = useSpring({
     opacity: inView ? 1 : 0,
-    transform: inView
-      ? "translateX(0)"
-      : `translateX(${index % 2 === 0 ? "-150px" : "150px"})`,
-    config: { mass: 1, tension: 120, friction: 80 },
+    transform: inView ? "scale(1)" : "scale(0.5)",
+    config: { mass: 1, tension: 120, friction: 70 },
   });
 
   return (

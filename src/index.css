@@ -230,7 +230,7 @@ header {
   flex-direction: column;
   justify-content: center;
 
-  background-image: url("./assets/image/bg-image-wide.jpg");
+  background-image: url("./assets/image/home-bg-image.jpg");
   background-size: cover;
   background-position: right center;
   background-repeat: no-repeat;

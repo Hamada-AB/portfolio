@@ -7,7 +7,7 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
       onRequestClose={onClose}
       contentLabel="Project Details"
       className="project-modal-content"
-      overlayClassName="modal-overlay"
+      overlayClassName="project-modal-overlay"
     >
       <div className="modal-header">
         <h2>{project?.title}</h2>
@@ -17,6 +17,12 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
       </div>
       <div className="modal-body">
         <p>{project?.details}</p>
+        <button
+          className="btn live-demo"
+          onClick={() => window.open(project.liveDemo, "_blank")}
+        >
+          Live Demo
+        </button>
       </div>
     </Modal>
   );

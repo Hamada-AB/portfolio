@@ -3,11 +3,14 @@ import { useSpring, animated } from "react-spring";
 import { useInView } from "react-intersection-observer";
 import { Element } from "react-scroll";
 
+// Projects Data
+import { projects } from "../assets/content/projects";
+
 // Components
 import ProjectCard from "./ProjectCard";
 import ProjectModal from "./ProjectModal";
 
-export default function Projects({ language, projects }) {
+export default function Projects({ language }) {
   const [selectedProject, setSelectedProject] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -33,7 +36,7 @@ export default function Projects({ language, projects }) {
   const headerAnimation = useSpring({
     transform: headerInView ? "scale(1)" : "scale(0.5)",
     opacity: headerInView ? 1 : 0,
-    config: { mass: 1, tension: 120, friction: 80 },
+    config: { mass: 1, tension: 120, friction: 70 },
   });
 
   return (

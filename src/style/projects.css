@@ -15,6 +15,7 @@
   --p-line-height: 1.5;
 }
 
+/****** Projects *****/
 .projects-section {
   background-color: var(--bg-color2);
   padding: 0 var(--padding-h) 100px var(--padding-h);
@@ -85,8 +86,15 @@
   color: var(--secondary-c2);
 }
 
-/* ProjectModal.css */
-.modal-overlay {
+.projects {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 350px));
+  gap: 40px;
+}
+
+/***** ProjectModal *****/
+.project-modal-overlay {
   padding: 50px;
   position: fixed;
   top: 0;
@@ -101,6 +109,7 @@
 }
 
 .project-modal-content {
+  color: #000;
   background: rgb(195, 141, 141);
   padding: 20px;
   border-radius: 8px;
@@ -114,7 +123,6 @@
 }
 
 .modal-header {
-  color: #000;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -131,8 +139,7 @@
   margin-top: 10px;
 }
 
-/* -------- */
-
+/****** ProjectCard ******/
 .project-card {
   cursor: pointer;
   position: relative;
@@ -173,15 +180,4 @@
 
 .btn:hover {
   background: #0056b3;
-}
-
-/* --------- */
-
-.projects {
-  width: 100%;
-  /* padding: 20px; */
-
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 350px));
-  gap: 40px;
 }

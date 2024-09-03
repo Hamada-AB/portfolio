@@ -22,7 +22,7 @@ export default function TechCarousel() {
           pagination={{ clickable: true }}
           loop
           autoplay={{
-            delay: 3000,
+            delay: 2000,
             disableOnInteraction: false,
           }}
           breakpoints={{
