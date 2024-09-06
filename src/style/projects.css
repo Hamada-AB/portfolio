@@ -166,6 +166,10 @@
   font-weight: 600;
 }
 
+.toc-titles ul {
+  list-style: none;
+}
+
 .toc-titles a {
   cursor: pointer;
   text-decoration: none;
