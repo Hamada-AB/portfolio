@@ -1,5 +1,8 @@
 import { useSpring, animated } from "react-spring";
 import { useInView } from "react-intersection-observer";
+import parse from "html-react-parser";
+
+import { btnIcons } from "../assets/icon/projectCard";
 
 const ProjectCard = ({ project, onDetailsClick, index }) => {
   // For Project Card Animation
@@ -21,18 +24,19 @@ const ProjectCard = ({ project, onDetailsClick, index }) => {
         style={{ backgroundImage: `url("${project.image}")` }}
       >
         <div className="overlay">
-          <button
-            className="btn live-demo"
-            onClick={() => window.open(project.liveDemo, "_blank")}
-          >
-            Live Demo
-          </button>
-          <button
-            className="btn details"
-            onClick={() => onDetailsClick(project)}
-          >
-            Details
-          </button>
+          <h3>Samsung Food Replica</h3>
+          <div className="overlay-btns">
+            <button
+              className="btn liveDemo"
+              onClick={() => window.open(project.liveDemo, "_blank")}
+            >
+              Live Demo {parse(btnIcons.live)}
+            </button>
+            <button className="btn" onClick={() => onDetailsClick(project)}>
+              Details
+              {parse(btnIcons.info)}
+            </button>
+          </div>
         </div>
       </div>
     </animated.div>

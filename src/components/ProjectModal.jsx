@@ -1,6 +1,8 @@
 import { useState } from "react";
 import Modal from "react-modal";
 import { Link, Element } from "react-scroll";
+import parse from "html-react-parser";
+import { btnIcons } from "../assets/icon/projectCard";
 
 // Components
 import ScreenShots from "./ScreenShots";
@@ -39,18 +41,21 @@ const ProjectModal = ({ project, isOpen, onClose, language }) => {
           onClick={() => window.open(project?.liveDemo, "_blank")}
         >
           Live Demo
+          {parse(btnIcons.live)}
         </button>
         <button
           className="modal-btn"
           onClick={() => window.open(project?.serverRepo, "_blank")}
         >
           Server Repo
+          {parse(btnIcons.github)}
         </button>
         <button
           className="modal-btn"
           onClick={() => window.open(project?.clientRepo, "_blank")}
         >
           Client Repo
+          {parse(btnIcons.github)}
         </button>
       </div>
 
