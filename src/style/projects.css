@@ -119,6 +119,16 @@
   overflow-y: auto;
 }
 
+.project-modal-content::-webkit-scrollbar {
+  width: 5px;
+}
+
+.project-modal-content::-webkit-scrollbar-thumb {
+  background-color: #666666;
+  border-radius: 6px;
+  border: 1px solid var(--bg-color1);
+}
+
 .modal-header {
   display: flex;
   justify-content: flex-end;
@@ -126,7 +136,7 @@
 }
 
 .modal-close-button {
-  color: #d58080;
+  color: var(--primary-c);
   background: transparent;
   border: none;
   font-size: 1.5rem;
@@ -148,7 +158,7 @@
   font-weight: 500;
   color: #fff;
   border-radius: 30px;
-  background-color: #d58080;
+  background-color: var(--primary-c);
   transition: background-color 300ms, scale 200ms;
 }
 
@@ -176,10 +186,10 @@
 }
 
 .toc-titles a:hover {
-  color: #d58080;
+  color: var(--primary-c);
 }
 .focus {
-  color: #d58080;
+  color: var(--primary-c);
 }
 
 .toc-content {
@@ -188,8 +198,9 @@
   gap: 25px;
   font-size: 17px;
 }
+
 .toc-content p {
-  margin-left: 15px;
+  padding-left: 15px;
   hyphens: auto;
 }
 
@@ -236,7 +247,7 @@
   position: sticky;
   top: 0;
   text-align: right;
-  border-right: 2px solid #d58080;
+  border-right: 2px solid var(--primary-c);
   padding-right: 15px;
 }
 
@@ -275,11 +286,11 @@
 
 .swiper-button-next,
 .swiper-button-prev {
-  color: #d58080 !important;
+  color: var(--primary-c) !important;
 }
 
 .swiper-pagination-bullet {
-  background-color: #d58080 !important;
+  background-color: var(--primary-c) !important;
 }
 
 /****** ProjectCard ******/
@@ -292,7 +303,7 @@
   background-position: center;
   border-radius: 8px;
   overflow: hidden;
-  color: #444;
+  color: var(--bg-color3);
   transition: transform 0.3s ease-in-out;
 }
 
@@ -312,7 +323,7 @@
 }
 
 .btn {
-  background: #67aeff;
+  background: var(--secodary-c1);
   color: #fff;
   border: none;
   padding: 8px 16px;
