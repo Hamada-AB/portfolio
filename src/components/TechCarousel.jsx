@@ -3,7 +3,7 @@ import parse from "html-react-parser";
 import { techStack as items } from "../assets/icon/about";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Navigation, Autoplay } from "swiper/modules";
+import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
@@ -15,11 +15,9 @@ export default function TechCarousel() {
     <div className="tech-container">
       <div className="carousel-wrapper">
         <Swiper
-          modules={[Pagination, Navigation, Autoplay]}
+          modules={[Autoplay]}
           spaceBetween={15}
           slidesPerView={1}
-          navigation
-          pagination={{ clickable: true }}
           loop
           autoplay={{
             delay: 2000,

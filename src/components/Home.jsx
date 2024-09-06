@@ -39,33 +39,35 @@ export default function Home({ language }) {
 
   return (
     <Element name="home">
-      <section className="home-section">
-        <div className="home-content">
-          <div className="heading">
-            <animated.h1 style={h1Spring}>
-              {language === "EN" ? "Hello, " : "Ciao! "}
-            </animated.h1>
-            <animated.h1 style={h1Spring}>
-              {language === "EN" ? "I'm Hamada" : "Sono Hamada"}
-            </animated.h1>
+      <div className="container">
+        <section className="home-section">
+          <div className="home-content">
+            <div className="heading">
+              <animated.h1 style={h1Spring}>
+                {language === "EN" ? "Hello, " : "Ciao! "}
+              </animated.h1>
+              <animated.h1 style={h1Spring}>
+                {language === "EN" ? "I'm Hamada" : "Sono Hamada"}
+              </animated.h1>
+            </div>
+
+            <div className="p-container">
+              <animated.p style={{ ...paragraphSpring, position: "absolute" }}>
+                {paragraphs[currentParagraph]}
+              </animated.p>
+            </div>
           </div>
 
-          <div className="p-container">
-            <animated.p style={{ ...paragraphSpring, position: "absolute" }}>
-              {paragraphs[currentParagraph]}
-            </animated.p>
-          </div>
-        </div>
-
-        <Link
-          to="contact"
-          smooth={true}
-          duration={500}
-          className="contact-btn-main"
-        >
-          {language === "EN" ? "CONTACT ME" : "CONTATTAMI"}
-        </Link>
-      </section>
+          <Link
+            to="contact"
+            smooth={true}
+            duration={500}
+            className="contact-btn-main"
+          >
+            {language === "EN" ? "CONTACT ME" : "CONTATTAMI"}
+          </Link>
+        </section>
+      </div>
     </Element>
   );
 }

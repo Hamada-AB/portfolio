@@ -5,6 +5,7 @@ import { Element } from "react-scroll";
 
 // Projects Data
 import { projects } from "../assets/content/projects";
+import { intro } from "../assets/content/projects";
 
 // Components
 import ProjectCard from "./ProjectCard";
@@ -55,24 +56,7 @@ export default function Projects({ language }) {
           </div>
 
           <p className="intro-message">
-            Thank you for visiting my project portfolio! As a junior full-stack
-            developer, I&#39;m passionate about creating seamless, functional
-            web applications. This portfolio showcases the skills I&#39;ve honed
-            through rigorous training and hands-on experience, particularly in
-            front-end and back-end development. Below, you&#39;ll find a project
-            that exemplifies my current capabilities - a lighter replica of the
-            <a href="https://samsungfood.com//" target="_blank">
-              {" "}
-              Samsung&nbsp;Food
-            </a>{" "}
-            website, developed during my bootcamp at{" "}
-            <a href="https://boolean.co.uk/" target="_blank">
-              {" "}
-              Boolean&nbsp;UK
-            </a>
-            . My journey is ongoing, and this portfolio will continue to expand
-            as I tackle new challenges and refine my craft. Please take a look
-            and follow along as I progress.
+            {language === "EN" ? intro.en : intro.it}
           </p>
         </animated.div>
 
@@ -91,6 +75,7 @@ export default function Projects({ language }) {
           project={selectedProject}
           isOpen={isModalOpen}
           onClose={closeModal}
+          language={language}
         />
       </section>
     </Element>

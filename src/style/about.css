@@ -188,15 +188,6 @@
   width: 90%;
 }
 
-.swiper-button-next,
-.swiper-button-prev {
-  display: none !important;
-}
-
-.swiper-pagination-bullet {
-  display: none !important;
-}
-
 /***********/
 
 @media (max-width: 855px) {

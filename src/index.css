@@ -220,7 +220,17 @@ header {
 }
 
 /***** Home Section *****/
+
+.container {
+  background-image: url("./assets/image/home-bg-image.jpg");
+  background-size: cover;
+  background-position: right center;
+  background-repeat: no-repeat;
+}
+
 .home-section {
+  max-width: 1100px;
+  margin: 0 auto;
   margin-top: 60px;
 
   padding: 0 var(--padding-h);
@@ -229,11 +239,6 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: center;
-
-  background-image: url("./assets/image/home-bg-image.jpg");
-  background-size: cover;
-  background-position: right center;
-  background-repeat: no-repeat;
 }
 
 .heading {
@@ -246,8 +251,8 @@ header {
   font-family: var(--poppins);
   font-weight: 700;
   user-select: none;
-
-  background: -webkit-linear-gradient(var(--secodary-c1), var(--primary-c));
+  /* Create a gradient effect for h1  */
+  background: linear-gradient(to right, var(--secodary-c1), var(--primary-c));
   background-clip: text;
   -webkit-text-fill-color: transparent;
   z-index: 1;

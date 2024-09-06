@@ -95,27 +95,24 @@
 
 /***** ProjectModal *****/
 .project-modal-overlay {
-  padding: 50px;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.856);
+
+  background: #444444f6;
   display: flex;
   justify-content: center;
-  /* align-items: center; */
   z-index: 99999;
 }
 
 .project-modal-content {
-  color: #000;
-  background: rgb(195, 141, 141);
+  color: #bababa;
+  background: #1c1c1c;
   padding: 20px;
-  border-radius: 8px;
 
-  width: 80%;
-  height: 500px;
+  max-width: 700px;
   position: relative;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 
@@ -124,19 +121,161 @@
 
 .modal-header {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
 }
 
-.close-button {
+.modal-close-button {
+  color: #d58080;
   background: transparent;
   border: none;
   font-size: 1.5rem;
   cursor: pointer;
 }
 
-.modal-body {
-  margin-top: 10px;
+.modal-btns-container {
+  margin: 0 auto;
+  max-width: 75%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.modal-btn {
+  border: none;
+  padding: 8px 14px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+  border-radius: 30px;
+  background-color: #d58080;
+  transition: background-color 300ms, scale 200ms;
+}
+
+.modal-btn:hover {
+  background-color: #e37979;
+  scale: 1.02;
+}
+
+.toc-titles ul {
+  width: 170px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.toc-titles a {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.toc-titles a:hover {
+  color: #d58080;
+}
+.focus {
+  color: #d58080;
+}
+
+.toc-content {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  font-size: 17px;
+}
+.toc-content p {
+  margin-left: 15px;
+  hyphens: auto;
+}
+
+.toc-content a {
+  color: var(--secodary-c1);
+  text-decoration: none;
+  font-weight: 450;
+  transition: color 300ms;
+}
+
+.toc-content a:hover {
+  color: var(--secondary-c2);
+}
+
+.toc-content ul {
+  list-style: circle;
+  margin-left: 30px;
+}
+.toc-content li {
+  margin-bottom: 5px;
+}
+
+.toc-content span {
+  font-weight: 600;
+}
+
+#modal-body {
+  display: flex;
+  gap: 15px;
+  font-size: 18px;
+
+  padding: 10px;
+  max-height: 50%;
+  overflow-y: scroll;
+  position: relative;
+}
+
+#modal-body h3 {
+  font-size: 18px;
+  margin-bottom: 4px;
+}
+
+.toc-titles {
+  position: sticky;
+  top: 0;
+  text-align: right;
+  border-right: 2px solid #d58080;
+  padding-right: 15px;
+}
+
+#modal-body::-webkit-scrollbar {
+  width: 5px;
+}
+
+#modal-body::-webkit-scrollbar-track {
+  background: #1c1c1c;
+}
+
+#modal-body::-webkit-scrollbar-thumb {
+  background-color: var(--primary-c);
+  border-radius: 6px;
+  border: 1px solid var(--bg-color1);
+}
+
+/****** ScreenShots ******/
+.screen-shots-container {
+  width: 90%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.img-slide {
+  padding: 30px 50px !important;
+  height: auto;
+}
+
+#img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0px 1px 3px 3px #00000048;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #d58080 !important;
+}
+
+.swiper-pagination-bullet {
+  background-color: #d58080 !important;
 }
 
 /****** ProjectCard ******/
@@ -169,7 +308,7 @@
 }
 
 .btn {
-  background: #007bff;
+  background: #67aeff;
   color: #fff;
   border: none;
   padding: 8px 16px;
@@ -179,5 +318,5 @@
 }
 
 .btn:hover {
-  background: #0056b3;
+  background: #67aeff;
 }
