@@ -1,5 +1,9 @@
 # My Portfolio
 
+## ⚠️ Important: Fork Before You Clone
+
+**Attention:** This updated approach encourages proper GitHub workflow and ensures that users work within their own repository fork, making it easier to manage contributions and changes.
+
 Welcome to my portfolio! This single-page application (SPA) is built using React, Vite, and plain CSS, showcasing my skills, projects, and experience. Below you'll find a brief overview of the sections and features included in this project.
 
 ## Overview
@@ -58,21 +62,45 @@ This portfolio is divided into five main sections:
 
 ## Installation
 
-To run this project locally:
+### Prerequisites
 
-1. Clone the repository:
+- Node.js and npm installed on your machine.
+
+### Steps
+
+1. **Fork the repository**:
+
+   - Click the "Fork" button at the top right corner of the repository page to create your own copy of the repository.
+
+2. **Clone the repository**:
+
+   - Clone the forked repository to your local machine:
+
    ```bash
-   git clone git@github.com:Hamada-AB/portfolio.git
+   git clone <your-forked-repository-url>
+
    ```
-2. Install dependencies:
+
+3. **Navigate to the project directory**
+
+4. **Install dependencies:**:
+
    ```bash
    npm install
+
    ```
-3. Start the development server:
+
+5. **Start the development server:**:
+
    ```bash
    npm run dev
+
    ```
 
 ## Contact
 
 If you have any questions or would like to get in touch, feel free to reach out through the [contact form](https://hmad.netlify.app/) on my portfolio or connect with me on [LinkedIn](https://www.linkedin.com/in/hamada-abdelaal).
+
+## Live Demo
+
+The application is live [here](https://hmad.netlify.app/).
