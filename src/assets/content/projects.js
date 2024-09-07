@@ -1,8 +1,35 @@
 import samsungFoodImage from "../image/samsung-food.jpg";
-import home from "../image/home.png";
-import save from "../image/save.png";
-import make from "../image/make.png";
-import grocery from "../image/grocery.png";
+
+// Samsung screen shots
+import home1 from "../image/samsung/home-1.png";
+import home2 from "../image/samsung/home-2.png";
+import home3 from "../image/samsung/home-3.png";
+import home4 from "../image/samsung/home-4.png";
+import home5 from "../image/samsung/home-5.png";
+import home6 from "../image/samsung/home-6.png";
+import home7 from "../image/samsung/home-7.png";
+
+import login1 from "../image/samsung/login-1.png";
+import login2 from "../image/samsung/login-2.png";
+
+import signup1 from "../image/samsung/signup-1.png";
+
+import recipe1 from "../image/samsung/recipe-1.png";
+import recipe2 from "../image/samsung/recipe-2.png";
+
+import explore1 from "../image/samsung/explore-1.png";
+import explore2 from "../image/samsung/explore-2.png";
+
+import saved from "../image/samsung/saved.png";
+
+import details1 from "../image/samsung/details-1.png";
+import details2 from "../image/samsung/details-2.png";
+
+import comment1 from "../image/samsung/comment-1.png";
+import comment2 from "../image/samsung/comment-2.png";
+
+import post1 from "../image/samsung/post-1.png";
+import post2 from "../image/samsung/post-2.png";
 
 export const intro = {
   en: "Thank you for visiting my project portfolio! As a junior full-stack developer, I'm deeply committed to crafting seamless and functional web applications. This portfolio highlights the skills I've developed through intensive training and hands-on experience in both front-end and back-end development. Below, you'll find a project that reflects my current expertise. My journey is far from over, and this portfolio will continue to grow as I embrace new challenges and sharpen my skills. I invite you to explore my work and follow along as I evolve.",
@@ -18,7 +45,29 @@ export const projects = [
     liveDemo: "https://www.linkedin.com/in/hamada-abdelaal-67aa9b223",
     serverRepo: "https://github.com/Hamada-AB/samsung-food-server",
     clientRepo: "https://github.com/Hamada-AB/samsung-food-client",
-    screenShots: [home, save, make, grocery],
+    screenShots: [
+      home1,
+      home2,
+      home3,
+      home4,
+      home5,
+      home6,
+      home7,
+      login1,
+      login2,
+      signup1,
+      recipe1,
+      recipe2,
+      explore1,
+      explore2,
+      saved,
+      details1,
+      details2,
+      comment1,
+      comment2,
+      post1,
+      post2,
+    ],
 
     detailsEN: {
       overview: `The Samsung Food Replica is a project completed as the final assignment of my coding bootcamp at Boolean UK. This application is a streamlined version of the <a href="https://samsungfood.com//" target="_blank">Samsung&nbsp;Food</a> website, showcasing my ability to build responsive and user-friendly web applications. The project is currently under development and continues to receive updates as I refine its features and functionalities.`,
