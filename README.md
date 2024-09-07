@@ -6,11 +6,11 @@ Welcome to my portfolio! This single-page application (SPA) is built using React
 
 This portfolio is divided into five main sections:
 
-1. **Home**
-2. **About**
-3. **Projects**
-4. **Contact**
-5. **Footer**
+1. [Home](#home)
+2. [About](#about)
+3. [Projects](#projects)
+4. [Contact](#contact)
+5. [Footer](#footer)
 
 ### Home
 
