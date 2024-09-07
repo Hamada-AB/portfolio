@@ -32,7 +32,10 @@ const ProjectCard = ({ project, onDetailsClick, index }) => {
             >
               Live Demo {parse(btnIcons.live)}
             </button>
-            <button className="btn" onClick={() => onDetailsClick(project)}>
+            <button
+              className="btn details"
+              onClick={() => onDetailsClick(project)}
+            >
               Details
               {parse(btnIcons.info)}
             </button>

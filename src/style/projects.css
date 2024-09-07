@@ -303,7 +303,8 @@
   height: 350px;
   background-size: cover;
   background-position: center;
-  border-radius: 5px;
+  border-radius: 15px;
+  box-shadow: 0px 0px 20px #95c0f2;
   overflow: hidden;
   opacity: 1;
   transition: transform 0.3s ease-in-out, opacity 300ms;
@@ -316,7 +317,7 @@
   right: 0;
   bottom: 0;
 
-  background-color: rgba(0, 0, 0, 0.768);
+  background-color: rgba(0, 0, 0, 0.668);
   padding: 30px 20px;
   opacity: 0;
   display: flex;
@@ -332,7 +333,7 @@
 
 .overlay h3 {
   font-size: 30px;
-  color: #91eba6;
+  color: #fff;
   user-select: none;
 }
 
@@ -346,32 +347,28 @@
   align-items: center;
   gap: 5px;
 
-  background-color: #d58080;
+  background-color: #67aeff;
   color: #fff;
   border: none;
   padding: 8px 16px;
   cursor: pointer;
   border-radius: 4px;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s, scale 0.3s;
 }
 
-.liveDemo {
-  background-color: #67aeff;
+.btn svg {
+  fill: aquamarine;
 }
 
 .btn:hover {
+  scale: 1.05;
+  background-color: #ed7171;
+}
+
+.details {
   background-color: #ed7171;
 }
 
 .liveDemo:hover {
-  background-color: #479dff;
-}
-
-.btn svg {
-  fill: #fff;
-  transition: fill 300ms;
-}
-
-.btn:hover svg {
-  fill: #b4efc2;
+  background-color: #67aeff;
 }
