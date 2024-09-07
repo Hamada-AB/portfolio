@@ -81,16 +81,16 @@ This portfolio is divided into five main sections:
 
    ```
 
-3. **Navigate to the project directory**
+3. **Navigate to the project directory.**
 
-4. **Install dependencies:**:
+4. **Install dependencies:**
 
    ```bash
    npm install
 
    ```
 
-5. **Start the development server:**:
+5. **Start the development server:**
 
    ```bash
    npm run dev
