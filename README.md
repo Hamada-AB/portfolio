@@ -4,9 +4,9 @@
 
 **Attention:** This updated approach encourages proper GitHub workflow and ensures that users work within their own repository fork, making it easier to manage contributions and changes.
 
-Welcome to my portfolio! This single-page application (SPA) is built using React, Vite, and plain CSS, showcasing my skills, projects, and experience. Below you'll find a brief overview of the sections and features included in this project.
-
 ## Overview
+
+This single-page application (SPA) is built using React, Vite, and plain CSS, showcasing my skills, projects, and experience. Below you'll find a brief overview of the sections and features included in this project.
 
 This portfolio is divided into five main sections:
 
