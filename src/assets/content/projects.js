@@ -42,7 +42,7 @@ export const projects = [
     id: 1,
     title: "Samsung Food Replica",
     image: samsungFoodImage,
-    liveDemo: "https://www.linkedin.com/in/hamada-abdelaal-67aa9b223",
+    liveDemo: "https://samsungfoodreplica.netlify.app/home",
     serverRepo: "https://github.com/Hamada-AB/samsung-food-server",
     clientRepo: "https://github.com/Hamada-AB/samsung-food-client",
     screenShots: [
