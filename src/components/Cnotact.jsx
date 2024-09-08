@@ -1,4 +1,5 @@
 import { Element } from "react-scroll";
+import ContactForm from "./ContactForm";
 
 export default function Contact({ language }) {
   return (
@@ -10,6 +11,8 @@ export default function Contact({ language }) {
             ? "This is the Contact section."
             : "Questa è la sezione Contatti."}
         </p>
+
+        <ContactForm />
       </section>
     </Element>
   );
