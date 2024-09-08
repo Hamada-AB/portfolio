@@ -41,7 +41,7 @@ This portfolio is divided into five main sections:
 
 - **Heading**: "CONTACT" with an h2 tag.
 - **Message**: A paragraph encouraging visitors to reach out.
-- **Contact Form**: A form for visitors to send messages, along with icons linking to my social media profiles (LinkedIn, GitHub, Discord, and email).
+- **Contact Form**: A form for visitors to send messages, including fields for name, country, subject, email, and message. Only the email and message fields are required. The form data is sent to the [backend service](https://github.com/Hamada-AB/portfolio-server), which handles email delivery.
 
 ### Footer
 
