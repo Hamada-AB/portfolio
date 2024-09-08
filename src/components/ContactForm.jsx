@@ -1,7 +1,9 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { formIcon } from "../assets/icon/contact";
+import parse from "html-react-parser";
 
 export default function ContactForm() {
-  const [ok, setOk] = useState("");
+  const [show, setShow] = useState(true);
   const [error, setError] = useState("");
   const [formData, setFormData] = useState({
     name: "",
@@ -10,6 +12,18 @@ export default function ContactForm() {
     email: "",
     message: "",
   });
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (show) {
+        setShow(false);
+      }
+    }, 3000);
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, [show]);
 
   const handleChange = (e) => {
     setFormData({
@@ -20,6 +34,7 @@ export default function ContactForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     try {
       await fetch("https://portfolio-server-86bc.onrender.com/send-email", {
         method: "POST",
@@ -29,7 +44,15 @@ export default function ContactForm() {
         body: JSON.stringify(formData),
       }).then((data) => {
         if (data && !data.error) {
-          setOk("Your message has been sent successfully.");
+          setFormData({
+            name: "",
+            country: "",
+            subject: "",
+            email: "",
+            message: "",
+          });
+
+          setShow(true);
         } else {
           setError("Failed to send message.");
         }
@@ -40,44 +63,62 @@ export default function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        name="name"
-        placeholder="Jhon Doe"
-        value={formData.name}
-        onChange={handleChange}
-      />
-      <input
-        type="text"
-        name="country"
-        placeholder="Italy"
-        value={formData.country}
-        onChange={handleChange}
-      />
-      <input
-        type="text"
-        name="subject"
-        placeholder="What can I help you with?"
-        value={formData.subject}
-        onChange={handleChange}
-      />
-      <input
-        type="email"
-        name="email"
-        placeholder="Your Email"
-        value={formData.email}
-        onChange={handleChange}
-        required
-      />
+    <form onSubmit={handleSubmit} className="contact-form">
+      <div className="inputs-container">
+        <div>
+          <input
+            type="text"
+            name="name"
+            placeholder="Your name (optional)"
+            value={formData.name}
+            onChange={handleChange}
+          />
+          <input
+            type="text"
+            name="country"
+            placeholder="Country (optional)"
+            value={formData.country}
+            onChange={handleChange}
+          />
+        </div>
+
+        <div>
+          <input
+            type="text"
+            name="subject"
+            placeholder="Subject (optional)"
+            value={formData.subject}
+            onChange={handleChange}
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Your email (required)"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
+        </div>
+      </div>
       <textarea
         name="message"
-        placeholder="Your Message"
+        placeholder="Type your Message here (required)."
         value={formData.message}
         onChange={handleChange}
         required
       />
-      <button type="submit">Send</button>
+
+      {show && (
+        <div className="over">
+          {parse(formIcon.success)}
+          <p>Your message has been sent. </p>
+          <p className="thanks">THANK YOU!</p>
+        </div>
+      )}
+
+      <div className="message-and-btn">
+        <button type="submit">Send</button>
+      </div>
     </form>
   );
 }
