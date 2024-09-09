@@ -14,14 +14,14 @@ export default function ContactForm() {
   });
 
   useEffect(() => {
-    const interval = setInterval(() => {
+    const timer = setTimeout(() => {
       if (show) {
         setShow(false);
       }
     }, 3000);
 
     return () => {
-      clearInterval(interval);
+      clearInterval(timer);
     };
   }, [show]);
 
@@ -34,6 +34,11 @@ export default function ContactForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!formData.email || !formData.message) {
+      setError("Email and message are required");
+      return;
+    }
 
     try {
       await fetch("https://portfolio-server-86bc.onrender.com/send-email", {
@@ -96,27 +101,26 @@ export default function ContactForm() {
             placeholder="Your email (required)"
             value={formData.email}
             onChange={handleChange}
-            required
           />
         </div>
       </div>
       <textarea
         name="message"
-        placeholder="Type your Message here (required)."
+        placeholder="Type your message here (required)."
         value={formData.message}
         onChange={handleChange}
-        required
       />
+      {error && <p className="error">{error}</p>}
 
       {show && (
-        <div className="over">
+        <div className="success-message">
           {parse(formIcon.success)}
           <p>Your message has been sent. </p>
           <p className="thanks">THANK YOU!</p>
         </div>
       )}
 
-      <div className="message-and-btn">
+      <div className="submit-btn">
         <button type="submit">Send</button>
       </div>
     </form>

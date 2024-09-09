@@ -117,24 +117,24 @@
   background-color: #67aeff;
 }
 
-.message-and-btn {
+.submit-btn {
   padding: 10px 0;
   display: flex;
   align-items: center;
   justify-content: flex-start;
 }
 
-.message-and-btn button {
+.submit-btn button {
   margin-left: auto;
 }
 
-.sent-message {
+/* .sent-message {
   display: flex;
   align-items: center;
   justify-content: center;
-}
+} */
 
-.over {
+.success-message {
   background-color: #536075eb;
   color: #abccf1;
   position: absolute;
@@ -153,6 +153,11 @@
 
 .thanks {
   color: #d58c8c;
+}
+
+.error {
+  color: #dc6969;
+  font-size: 14px;
 }
 
 /* ***** */
