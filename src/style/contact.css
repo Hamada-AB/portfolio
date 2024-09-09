@@ -9,10 +9,10 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 0px var(--padding-h);
-  margin-bottom: 150px;
+  margin-bottom: 140px;
 
   align-items: center;
-  gap: 80px;
+  gap: 60px;
 
   position: relative;
   overflow-x: hidden;
