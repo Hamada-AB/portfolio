@@ -254,8 +254,9 @@ header {
   background-blend-mode: screen;
   animation: spin 2s linear infinite, fade 4s ease-in-out infinite alternate;
   position: absolute;
+  top: 20%;
   right: 50px;
-  bottom: 250px;
+  bottom: 30%;
   margin: 20px;
   z-index: 0;
   box-shadow: 0 0 80px rgba(103, 174, 255, 0.837),
