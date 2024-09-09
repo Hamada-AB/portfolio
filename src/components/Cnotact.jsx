@@ -31,6 +31,7 @@ export default function Contact({ language }) {
               : "Felice di sentirti"}
           </p>
         </div>
+
         <div className="contact-body">
           <animated.div
             ref={ref}
