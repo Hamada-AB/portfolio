@@ -1,21 +1,6 @@
-:root {
-  --montseraat: "Montserrat", sans-serif;
-  --poppins: "Poppins", sans-serif;
-  --padding-h: 60px;
-  --padding-v: 20px;
-  --bg-color1: #010200;
-  --bg-color2: #0e0e0e;
-  --bg-color3: #444;
-  --color-1: #a6a6a6;
-  --color-2: #bababa;
-  --primary-c: #d58080;
-  --secodary-c1: #67aeff;
-  --secondary-c2: #95c1f2;
-  --home-p-c: #d2e7ff;
-  --p-line-height: 1.5;
-}
-
 footer {
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -23,7 +8,7 @@ footer {
   padding: 20px;
   text-align: center;
   background-color: #010200;
-  border-top: 1px solid #dca8a8;
+  border-top: 1px solid #dca8a8b1;
 }
 
 footer p {

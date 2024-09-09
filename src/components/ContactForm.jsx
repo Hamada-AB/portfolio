@@ -130,7 +130,6 @@ export default function ContactForm() {
         value={formData.message}
         onChange={handleChange}
       />
-      {error && <p className="error">{error}</p>}
 
       {show && (
         <div className="success-message">
@@ -141,7 +140,8 @@ export default function ContactForm() {
       )}
 
       <div className="submit-btn">
-        <button type="submit">Send</button>
+        {error && <p className="error">{error}</p>}
+        <button type="submit">SEND</button>
       </div>
     </animated.form>
   );

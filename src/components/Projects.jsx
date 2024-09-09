@@ -42,42 +42,46 @@ export default function Projects({ language }) {
 
   return (
     <Element name="projects">
-      <section className="projects-section">
-        <animated.div
-          ref={headerRef}
-          style={headerAnimation}
-          className={"intro"}
-        >
-          <div className="intro-header">
-            <h2>{language === "EN" ? "PROJECTS" : "PROGETTI"}</h2>
-            <p>
-              {language === "EN" ? "I love what I do" : "Amo quello che faccio"}
+      <div id="about">
+        <section className="projects-section">
+          <animated.div
+            ref={headerRef}
+            style={headerAnimation}
+            className={"intro"}
+          >
+            <div className="intro-header">
+              <h2>{language === "EN" ? "PROJECTS" : "PROGETTI"}</h2>
+              <p>
+                {language === "EN"
+                  ? "I love what I do"
+                  : "Amo quello che faccio"}
+              </p>
+            </div>
+
+            <p className="intro-message">
+              {language === "EN" ? intro.en : intro.it}
             </p>
+          </animated.div>
+
+          <div className="projects">
+            {projects.map((project, index) => (
+              <ProjectCard
+                index={index}
+                key={project.id}
+                project={project}
+                onDetailsClick={openModal}
+              />
+            ))}
           </div>
 
-          <p className="intro-message">
-            {language === "EN" ? intro.en : intro.it}
-          </p>
-        </animated.div>
-
-        <div className="projects">
-          {projects.map((project, index) => (
-            <ProjectCard
-              index={index}
-              key={project.id}
-              project={project}
-              onDetailsClick={openModal}
-            />
-          ))}
-        </div>
-
-        <ProjectModal
-          project={selectedProject}
-          isOpen={isModalOpen}
-          onClose={closeModal}
-          language={language}
-        />
-      </section>
+          <ProjectModal
+            project={selectedProject}
+            isOpen={isModalOpen}
+            onClose={closeModal}
+            language={language}
+          />
+        </section>
+      </div>
     </Element>
   );
 }

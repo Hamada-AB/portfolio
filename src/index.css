@@ -222,16 +222,8 @@ header {
 }
 
 /***** Home Section *****/
-
-.container {
-  background-image: url("./assets/image/home-bg-image.jpg");
-  background-size: cover;
-  background-position: right center;
-  background-repeat: no-repeat;
-}
-
 .home-section {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
   margin-top: 60px;
 
@@ -241,6 +233,33 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  position: relative;
+}
+
+/* Creating a glowing light trail effect (pink moon) */
+.light-trail {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(
+      circle,
+      rgba(103, 174, 255, 0.8) 0%,
+      rgba(103, 174, 255, 0.051) 70%
+    ),
+    radial-gradient(
+      circle,
+      rgba(213, 128, 128, 0.8) 0%,
+      rgba(213, 128, 128, 0.508) 70%
+    );
+  background-blend-mode: screen;
+  animation: spin 2s linear infinite, fade 4s ease-in-out infinite alternate;
+  position: absolute;
+  right: 50px;
+  bottom: 250px;
+  margin: 20px;
+  z-index: 0;
+  box-shadow: 0 0 80px rgba(103, 174, 255, 0.837),
+    0 0 80px rgba(213, 128, 128, 0.6);
 }
 
 .heading {

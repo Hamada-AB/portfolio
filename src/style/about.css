@@ -1,7 +1,7 @@
 .about-me {
   padding: 0px var(--padding-h);
-  margin-bottom: 80px;
-
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
