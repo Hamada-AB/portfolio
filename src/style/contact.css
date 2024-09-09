@@ -35,11 +35,52 @@
   gap: 40px;
 }
 
+.contact-intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.contact-intro h4 {
+  font-weight: 600;
+}
+.contact-intro p {
+  margin-top: 5px;
+  line-height: 1;
+  line-height: 1.2;
+  margin-bottom: 30px;
+  font-size: 19px;
+}
+
+.contact-intro p a {
+  color: var(--secodary-c1);
+  text-decoration: none;
+  font-weight: 450;
+  transition: color 300ms;
+}
+
 .platforms {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  height: 70px;
+  gap: 30px;
+
+  list-style: none;
+}
+
+.platforms a {
+  text-decoration: none;
+}
+
+.platforms a svg {
+  width: 40px;
+  height: 40px;
+  fill: #95c1f2;
+  transition: fill 300ms;
+}
+
+.platforms a:hover svg {
+  fill: #d58c8c;
+  transition: background-color 300ms;
 }
 
 /****** Contact Form ******/

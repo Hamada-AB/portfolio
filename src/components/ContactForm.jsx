@@ -58,6 +58,7 @@ export default function ContactForm() {
           });
 
           setShow(true);
+          setError("");
         } else {
           setError("Failed to send message.");
         }
