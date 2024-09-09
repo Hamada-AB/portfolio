@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { formIcon } from "../assets/icon/contact";
 import parse from "html-react-parser";
+import { useSpring, animated } from "react-spring";
+import { useInView } from "react-intersection-observer";
 
 export default function ContactForm() {
   const [show, setShow] = useState(false);
@@ -68,8 +70,25 @@ export default function ContactForm() {
     }
   };
 
+  // Slide in Animation
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
+  const animationProps = useSpring({
+    opacity: inView ? 1 : 0,
+    transform: inView ? "translateX(0)" : `translateX(100px)`,
+    config: { mass: 1, tension: 120, friction: 40 },
+  });
+
   return (
-    <form onSubmit={handleSubmit} className="contact-form">
+    <animated.form
+      ref={ref}
+      style={animationProps}
+      onSubmit={handleSubmit}
+      className="contact-form"
+    >
       <div className="inputs-container">
         <div>
           <input
@@ -124,6 +143,6 @@ export default function ContactForm() {
       <div className="submit-btn">
         <button type="submit">Send</button>
       </div>
-    </form>
+    </animated.form>
   );
 }

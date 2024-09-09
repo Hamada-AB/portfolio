@@ -1,11 +1,25 @@
 import { Element } from "react-scroll";
 import { formIcon } from "../assets/icon/contact";
 import parse from "html-react-parser";
+import { useSpring, animated } from "react-spring";
+import { useInView } from "react-intersection-observer";
 
 // Components
 import ContactForm from "./ContactForm";
 
 export default function Contact({ language }) {
+  // Slide in Animation
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
+  const animationProps = useSpring({
+    opacity: inView ? 1 : 0,
+    transform: inView ? "translateX(0)" : `translateX(-100px)`,
+    config: { mass: 1, tension: 120, friction: 40 },
+  });
+
   return (
     <Element name="contact">
       <section className="contact">
@@ -18,7 +32,11 @@ export default function Contact({ language }) {
           </p>
         </div>
         <div className="contact-body">
-          <div className="contact-intro">
+          <animated.div
+            ref={ref}
+            style={animationProps}
+            className="contact-intro"
+          >
             <div>
               <h4>{language === "EN" ? "Get in Touch" : "Contattami"} </h4>
               <p>
@@ -36,12 +54,12 @@ export default function Contact({ language }) {
                   <a href="mailto:hamada_abdelaal@hotmail.com">
                     hamada_abdelaal@hotmail.com
                   </a>
-                  , and I’ll get back to you as soon as possible.
+                  , and I&#39;ll get back to you as soon as possible.
                 </p>
               ) : (
                 <p>
-                  Preferisci inviare un'email? Mandami un messaggio direttamente
-                  a{" "}
+                  Preferisci inviare un&#39;email? Mandami un messaggio
+                  direttamente a{" "}
                   <a href="mailto:hamada_abdelaal@hotmail.com">
                     hamada_abdelaal@hotmail.com
                   </a>{" "}
@@ -75,7 +93,7 @@ export default function Contact({ language }) {
                 </a>
               </li>
             </ul>
-          </div>
+          </animated.div>
 
           <ContactForm />
         </div>
