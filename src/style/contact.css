@@ -15,12 +15,16 @@
   --p-line-height: 1.5;
 }
 
+.contact,
+.contact-intro,
+.platforms {
+  display: flex;
+  flex-direction: column;
+}
+
 .contact {
   padding: 0px var(--padding-h);
   margin-bottom: 80px;
-
-  display: flex;
-  flex-direction: column;
   align-items: center;
   gap: 50px;
 
@@ -35,8 +39,6 @@
 }
 
 .contact-intro {
-  display: flex;
-  flex-direction: column;
   justify-content: space-between;
 }
 
@@ -59,10 +61,7 @@
 }
 
 .platforms {
-  display: flex;
-  align-items: center;
   gap: 30px;
-
   list-style: none;
 }
 
@@ -168,12 +167,6 @@
   margin-left: auto;
 }
 
-/* .sent-message {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-} */
-
 .success-message {
   background-color: #536075eb;
   color: #abccf1;
@@ -200,14 +193,13 @@
   font-size: 14px;
 }
 
-/* ***** */
 @media (max-width: 768px) {
   .contact-form {
     padding: 24px;
   }
 
   .contact-form button {
-    font-size: 1rem;
-    padding: 0.75rem;
+    font-size: 16px;
+    padding: 12px;
   }
 }
