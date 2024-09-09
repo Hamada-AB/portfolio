@@ -41,7 +41,7 @@ export default function Contact({ language }) {
               <h4>{language === "EN" ? "Get in Touch" : "Contattami"} </h4>
               <p>
                 {language === "EN"
-                  ? "I'd love to hear from you! Whether you have questions, or feedbackor just want to say hello, feel free to reach out. Looking forward to hearing from you!"
+                  ? "I'd love to hear from you! Whether you have questions, feedback, or just want to say hello, feel free to reach out. Looking forward to hearing from you!"
                   : "Sarei felice di sentirti! Che tu abbia domande, feedback o semplicemente voglia dire ciao, non esitare a contattarmi. Non vedo l'ora di sentirti!"}
               </p>
             </div>
