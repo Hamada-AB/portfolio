@@ -1,0 +1,60 @@
+:root {
+  --montseraat: "Montserrat", sans-serif;
+  --poppins: "Poppins", sans-serif;
+  --padding-h: 60px;
+  --padding-v: 20px;
+  --bg-color1: #010200;
+  --bg-color2: #0e0e0e;
+  --bg-color3: #444;
+  --color-1: #a6a6a6;
+  --color-2: #bababa;
+  --primary-c: #d58080;
+  --secodary-c1: #67aeff;
+  --secondary-c2: #95c1f2;
+  --home-p-c: #d2e7ff;
+  --p-line-height: 1.5;
+}
+
+.dev-modal {
+  display: flex;
+  position: fixed;
+  z-index: 50000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.75);
+  justify-content: center;
+  align-items: center;
+}
+
+.dev-modal-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: #0e0e0e;
+  background-color: #d58080;
+  margin: auto;
+  padding: 40px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 600px;
+  text-align: center;
+  position: relative;
+  border: 1px solid #95c1f2;
+  box-shadow: 0 0 5px 3px #67aeffaa;
+}
+
+.dev-modal-content h2 {
+  font-size: 25px;
+}
+
+.dev-close-btn {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  color: black;
+  font-size: 30px;
+  cursor: pointer;
+}
