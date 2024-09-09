@@ -1,7 +1,9 @@
 export default function Footer() {
+  const currentYear = new Date().getFullYear();
   return (
     <footer>
-      <p>&copy; 2024 Hamada Abdelaal</p>
+      <p>&copy; Hamada Abdelaal {currentYear}</p>
+      <p>Made with ❤️. All rights reserved</p>
     </footer>
   );
 }
