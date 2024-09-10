@@ -4,7 +4,7 @@ import parse from "html-react-parser";
 import { useSpring, animated } from "react-spring";
 import { useInView } from "react-intersection-observer";
 
-export default function ContactForm() {
+export default function ContactForm({ language }) {
   const [show, setShow] = useState(false);
   const [error, setError] = useState("");
   const [formData, setFormData] = useState({
@@ -38,7 +38,11 @@ export default function ContactForm() {
     e.preventDefault();
 
     if (!formData.email || !formData.message) {
-      setError("Email and message are required");
+      setError(
+        language === "EN"
+          ? "Email and message are required"
+          : "Email e messaggio sono obbligatori"
+      );
       return;
     }
 
@@ -62,7 +66,11 @@ export default function ContactForm() {
           setShow(true);
           setError("");
         } else {
-          setError("Failed to send message.");
+          setError(
+            language === "EN"
+              ? "Failed to send message."
+              : "Invio del messaggio fallito"
+          );
         }
       });
     } catch (error) {
@@ -94,14 +102,20 @@ export default function ContactForm() {
           <input
             type="text"
             name="name"
-            placeholder="Your name (optional)"
+            placeholder={
+              language === "EN"
+                ? "Your name (optional)"
+                : "Il tuo nome (facoltativo)"
+            }
             value={formData.name}
             onChange={handleChange}
           />
           <input
             type="text"
             name="country"
-            placeholder="Country (optional)"
+            placeholder={
+              language === "EN" ? "Country (optional)" : "Paese (facoltativo)"
+            }
             value={formData.country}
             onChange={handleChange}
           />
@@ -111,14 +125,20 @@ export default function ContactForm() {
           <input
             type="text"
             name="subject"
-            placeholder="Subject (optional)"
+            placeholder={
+              language === "EN" ? "Subject (optional)" : "Oggetto (facoltativo)"
+            }
             value={formData.subject}
             onChange={handleChange}
           />
           <input
             type="email"
             name="email"
-            placeholder="Your email (required)"
+            placeholder={
+              language === "EN"
+                ? "Your email (required)"
+                : "La tua email (obbligatorio)"
+            }
             value={formData.email}
             onChange={handleChange}
           />
@@ -126,7 +146,11 @@ export default function ContactForm() {
       </div>
       <textarea
         name="message"
-        placeholder="Type your message here (required)."
+        placeholder={
+          language === "EN"
+            ? "Type your message here (required)."
+            : "Scrivi qui il tuo messaggio (obbligatorio)."
+        }
         value={formData.message}
         onChange={handleChange}
       />
@@ -134,14 +158,20 @@ export default function ContactForm() {
       {show && (
         <div className="success-message">
           {parse(formIcon.success)}
-          <p>Your message has been sent. </p>
-          <p className="thanks">THANK YOU!</p>
+          <p>
+            {language === "EN"
+              ? "Your message has been sent."
+              : "Il tuo messaggio è stato inviato."}
+          </p>
+          <p className="thanks">
+            {language === "EN" ? "THANK YOU!" : "GRAZIE!"}
+          </p>
         </div>
       )}
 
       <div className="submit-btn">
         {error && <p className="error">{error}</p>}
-        <button type="submit">SEND</button>
+        <button type="submit">{language === "EN" ? "SEND" : "INVIA"}</button>
       </div>
     </animated.form>
   );

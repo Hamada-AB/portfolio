@@ -96,7 +96,7 @@ export default function Contact({ language }) {
             </ul>
           </animated.div>
 
-          <ContactForm />
+          <ContactForm language={language} />
         </div>
       </section>
     </Element>
