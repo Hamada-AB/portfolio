@@ -20,12 +20,15 @@ export default function ContactForm({ language }) {
       if (show) {
         setShow(false);
       }
-    }, 3000);
+      if (error) {
+        setError("");
+      }
+    }, 5000);
 
     return () => {
       clearInterval(timer);
     };
-  }, [show]);
+  }, [show, error]);
 
   const handleChange = (e) => {
     setFormData({
