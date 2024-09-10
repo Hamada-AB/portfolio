@@ -24,7 +24,7 @@ export default function TechCarousel() {
             disableOnInteraction: false,
           }}
           breakpoints={{
-            390: {
+            400: {
               slidesPerView: 1,
             },
             768: {
