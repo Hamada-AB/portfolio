@@ -90,7 +90,7 @@ header {
 }
 
 /* Modal Styles */
-.modal {
+.nav-modal {
   position: fixed;
   top: 0;
   left: 0;
@@ -107,11 +107,11 @@ header {
   z-index: 100;
 }
 
-.modal.open {
+.nav-modal.open {
   transform: translateX(0);
 }
 
-.modal-content {
+.nav-modal-content {
   background-color: var(--bg-color3);
   width: 75%;
   max-width: 300px;
@@ -124,7 +124,7 @@ header {
   align-items: flex-start;
 }
 
-.modal-content .close {
+.nav-modal-content .close {
   all: unset;
   align-self: flex-end;
   font-size: 30px;
@@ -152,4 +152,57 @@ header {
   background-color: var(--primary-c);
   color: var(--bg-color3);
   border-radius: 4px;
+}
+
+/* Responsive styles for screens up to 768px */
+@media (max-width: 768px) {
+  .desktop-nav {
+    display: none;
+  }
+
+  .menu-icon {
+    display: block;
+    margin-left: auto;
+  }
+
+  header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px;
+  }
+
+  .logo {
+    margin-bottom: 10px;
+  }
+
+  .header-btns {
+    margin-top: 10px;
+  }
+
+  .language-toggle {
+    display: none;
+  }
+
+  /* Adjust menu modal */
+  .nav-modal {
+    width: 300px;
+    height: fit-content;
+  }
+
+  .nav-modal-content {
+    width: 100%;
+    max-width: none;
+    padding: 20px;
+  }
+
+  .mobile-nav {
+    gap: 15px;
+  }
+
+  .mobile-nav a,
+  .mobile-nav button {
+    padding: 15px;
+    font-size: 18px;
+  }
 }

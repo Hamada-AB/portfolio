@@ -92,3 +92,38 @@
   color: var(--primary-c);
   border-color: var(--primary-c);
 }
+
+@media (max-width: 855px) {
+  .home-section {
+    padding: 20px 10px;
+  }
+
+  .home-section {
+    margin-top: 20px;
+    background-size: 140%;
+    background-repeat: no-repeat;
+  }
+
+  .home-content {
+    padding-top: 0;
+    margin-top: 0;
+    margin-bottom: 0px;
+  }
+
+  .home-content h1 {
+    font-size: 2rem;
+  }
+
+  .home-content p {
+    margin-top: 5px;
+    margin-bottom: 40px;
+    font-size: 1rem;
+  }
+
+  .contact-btn-main {
+    align-self: center;
+    margin-top: 270px;
+    font-size: 1rem;
+    border-radius: 35px;
+  }
+}
