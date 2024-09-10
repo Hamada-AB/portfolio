@@ -114,9 +114,24 @@
 }
 
 .contact-form textarea {
-  resize: vertical;
+  resize: none;
+  overflow-y: auto;
   min-height: 150px;
   font-family: var(--montseraat);
+}
+
+.contact-form textarea::-webkit-scrollbar {
+  width: 3px;
+}
+
+.contact-form textarea::-webkit-scrollbar-track {
+  background: var(--bg-color1);
+}
+
+.contact-form textarea::-webkit-scrollbar-thumb {
+  background-color: #95c1f2;
+  border-radius: 6px;
+  border: 1px solid var(--secondary-c2);
 }
 
 .submit-btn button {
