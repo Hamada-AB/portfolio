@@ -158,7 +158,7 @@
 
 .tech-container {
   margin-top: 30px;
-  width: 50%;
+  width: 50% !important;
   padding: 10px 0;
 }
 
@@ -188,30 +188,59 @@
   width: 90%;
 }
 
-/***********/
+/* Responsive Styles */
+@media (max-width: 960px) {
+  .about-me {
+    padding: 0 20px;
+  }
 
-@media (max-width: 855px) {
-  .about {
+  .content-container {
     grid-template-columns: 1fr;
-    margin-top: 0;
-    padding-top: 0;
+    gap: 20px;
+    text-align: left;
   }
 
-  .my-photo-container {
-    position: relative;
-    overflow: hidden;
+  .welcome {
+    text-align: center;
   }
 
-  .my-photo-container::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+  .my-photo-container,
+  .bio p {
+    padding-left: 0;
+    border-left: none;
+    margin-bottom: 20px;
+  }
 
-    background: radial-gradient(circle, transparent, #010200 75%);
-    pointer-events: none;
-    z-index: 1;
+  .my-photo {
+    width: 50%;
+  }
+
+  .bio p {
+    font-size: 20px;
+  }
+
+  .tech-container {
+    max-width: 220px;
+    margin-left: 20px;
+  }
+}
+
+@media (max-width: 400px) {
+  .welcome h2 {
+    font-size: 14px;
+  }
+
+  .welcome p {
+    font-size: 1.2rem;
+  }
+
+  .my-photo {
+    width: 60%;
+  }
+
+  .tech-container {
+    margin-top: 10px;
+    max-width: 120px;
+    margin-left: 20px;
   }
 }

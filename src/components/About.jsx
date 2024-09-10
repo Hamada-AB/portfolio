@@ -118,6 +118,7 @@ export default function About({ language }) {
             )}
           </div>
         </div>
+
         <TechCarousel />
       </section>
     </Element>

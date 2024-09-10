@@ -18,19 +18,23 @@ export default function TechCarousel() {
           modules={[Autoplay]}
           spaceBetween={15}
           slidesPerView={1}
-          loop
+          loop={true}
           autoplay={{
             delay: 2000,
             disableOnInteraction: false,
           }}
           breakpoints={{
-            550: {
-              slidesPerView: 2,
-              slidesPerGroup: 2,
+            390: {
+              slidesPerView: 1,
             },
             768: {
+              slidesPerView: 2,
+            },
+
+            960: {
               slidesPerView: 3,
             },
+
             1200: {
               slidesPerView: 4,
             },
