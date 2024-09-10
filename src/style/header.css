@@ -1,0 +1,155 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: var(--padding-v) var(--padding-h);
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  background-color: var(--bg-color1);
+  transition: all 900ms ease;
+  z-index: 100;
+  font-size: 16px;
+}
+
+.logo {
+  all: unset;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-about {
+  box-shadow: 0 0px 50px #d5808083, 0 0px 150px #67aeff85;
+  transform: translateY(-10px);
+  z-index: 200;
+}
+
+.header-projects {
+  box-shadow: 0 0px 50px #d5808050, 0 0px 150px #95c0f255;
+  transform: translateY(-10px);
+  z-index: 200;
+}
+
+.header-contact {
+  box-shadow: 0 0px 50px #d5808024, 0 0px 150px #95c0f227;
+  transform: translateY(-10px);
+  z-index: 200;
+}
+
+.desktop-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.desktop-nav a {
+  cursor: pointer;
+  text-decoration: none;
+  transition: color 300ms;
+  padding: 7px 0;
+  transition: color 0.3s ease;
+}
+
+.desktop-nav a:hover {
+  color: var(--primary-c);
+}
+
+.desktop-nav a.active {
+  border-bottom: 1.5px solid var(--primary-c);
+}
+
+/***** Mobile Menu Icon *****/
+.menu-icon {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/***** Language Button *****/
+
+.language-toggle {
+  cursor: pointer;
+  padding: 4px 8px;
+  color: #fff;
+  font-size: 14px;
+  background-color: var(--primary-c);
+  border: none;
+  border-radius: 3px;
+  transition: background-color 300ms;
+}
+
+.language-toggle:hover {
+  background-color: var(--secondary-c2);
+}
+
+/* Modal Styles */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--bg-color1);
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+  z-index: 100;
+}
+
+.modal.open {
+  transform: translateX(0);
+}
+
+.modal-content {
+  background-color: var(--bg-color3);
+  width: 75%;
+  max-width: 300px;
+  height: fit-content;
+  position: fixed;
+  top: 0px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.modal-content .close {
+  all: unset;
+  align-self: flex-end;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.mobile-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.mobile-nav a,
+.mobile-nav button {
+  all: unset;
+  text-decoration: none;
+  width: fit-content;
+  text-align: left;
+  padding: 10px;
+  transition: background-color 300ms;
+}
+
+.mobile-nav a:hover,
+.mobile-nav button:hover {
+  background-color: var(--primary-c);
+  color: var(--bg-color3);
+  border-radius: 4px;
+}
