@@ -4,7 +4,7 @@ import parse from "html-react-parser";
 
 import { btnIcons } from "../assets/icon/projectCard";
 
-const ProjectCard = ({ project, onDetailsClick, index }) => {
+const ProjectCard = ({ project, onDetailsClick, index, language }) => {
   // For Project Card Animation
   const [ref, inView] = useInView({
     triggerOnce: true,
@@ -36,7 +36,7 @@ const ProjectCard = ({ project, onDetailsClick, index }) => {
               className="btn details"
               onClick={() => onDetailsClick(project)}
             >
-              Details
+              {language === "EN" ? "Details" : "Dettagli"}
               {parse(btnIcons.info)}
             </button>
           </div>

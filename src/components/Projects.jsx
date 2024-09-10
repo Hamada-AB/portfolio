@@ -70,6 +70,7 @@ export default function Projects({ language }) {
                 key={project.id}
                 project={project}
                 onDetailsClick={openModal}
+                language={language}
               />
             ))}
           </div>
