@@ -111,7 +111,14 @@ header {
 }
 
 .nav-modal-content {
-  background-color: var(--bg-color3);
+  background-color: #aac3fe;
+  color: var(--bg-color1);
+  font-weight: 500;
+  border-right: 2px solid #95c0f2;
+  border-bottom: 2px solid #95c0f2;
+
+  border-radius: 0 0 5px 0;
+
   width: 75%;
   max-width: 300px;
   height: fit-content;
