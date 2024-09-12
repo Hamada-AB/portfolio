@@ -67,3 +67,9 @@ html {
 button {
   cursor: pointer;
 }
+
+@media (max-width: 855px) {
+  html {
+    scrollbar-width: none;
+  }
+}
