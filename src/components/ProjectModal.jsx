@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Modal from "react-modal";
 import { Link, Element } from "react-scroll";
 import parse from "html-react-parser";
@@ -9,8 +9,23 @@ import ScreenShots from "./ScreenShots";
 
 const ProjectModal = ({ project, isOpen, onClose, language }) => {
   const [activeContent, setActiveContent] = useState("null");
-
+  const [winWidth, setWinWidth] = useState(0);
   const details = language === "EN" ? project?.detailsEN : project?.detailsIT;
+
+  const liveBtnText = winWidth > 500 ? "Live Demo" : "Live";
+  const serverBtnText = winWidth > 500 ? "Server Repo" : "Server";
+  const clientBtnText = winWidth > 500 ? "Client Repo" : "Client";
+
+  function getWinWidth() {
+    setWinWidth(window.innerWidth);
+  }
+
+  useEffect(() => {
+    window.addEventListener("resize", getWinWidth);
+    return () => {
+      window.removeEventListener("resize", getWinWidth);
+    };
+  }, []);
 
   function handleActiveContent(to) {
     setActiveContent(to);
@@ -40,21 +55,21 @@ const ProjectModal = ({ project, isOpen, onClose, language }) => {
           className="modal-btn"
           onClick={() => window.open(project?.liveDemo, "_blank")}
         >
-          Live Demo
+          {liveBtnText}
           {parse(btnIcons.live)}
         </button>
         <button
           className="modal-btn"
           onClick={() => window.open(project?.serverRepo, "_blank")}
         >
-          Server Repo
+          {serverBtnText}
           {parse(btnIcons.github)}
         </button>
         <button
           className="modal-btn"
           onClick={() => window.open(project?.clientRepo, "_blank")}
         >
-          Client Repo
+          {clientBtnText}
           {parse(btnIcons.github)}
         </button>
       </div>

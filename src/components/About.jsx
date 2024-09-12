@@ -10,8 +10,6 @@ export default function About({ language }) {
   const [isVisible, setIsVisible] = useState(false);
   const [winWidth, setWinWidth] = useState(window.innerWidth);
   const [showFullText, setShowFullText] = useState(winWidth > 1000);
-  console.log(winWidth);
-  console.log(showFullText);
 
   function getWinWidth() {
     setWinWidth(window.innerWidth);

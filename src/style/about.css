@@ -203,7 +203,7 @@
   width: 90%;
 }
 
-/* Responsive Styles */
+/* Responsive styles for screens up to 960px */
 @media (max-width: 960px) {
   .about-me {
     padding: 0 20px;
@@ -243,6 +243,8 @@
     margin-left: 20px;
   }
 }
+
+/* Additional responsive adjustments for screens smaller than 400px */
 
 @media (max-width: 400px) {
   .welcome h2 {
