@@ -39,7 +39,7 @@ export default function Header({ language, setLanguage }) {
         </button>
 
         <div className="menu-icon" onClick={toggleModal}>
-          &#9776;
+          {parse(icons.menu)}
         </div>
 
         <Navbar
