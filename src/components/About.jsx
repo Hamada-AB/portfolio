@@ -8,6 +8,21 @@ import TechCarousel from "./TechCarousel";
 export default function About({ language }) {
   const sectionRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [winWidth, setWinWidth] = useState(window.innerWidth);
+  const [showFullText, setShowFullText] = useState(winWidth > 1000);
+  console.log(winWidth);
+  console.log(showFullText);
+
+  function getWinWidth() {
+    setWinWidth(window.innerWidth);
+  }
+
+  useEffect(() => {
+    window.addEventListener("resize", getWinWidth);
+    return () => {
+      window.removeEventListener("resize", getWinWidth);
+    };
+  }, []);
 
   useEffect(() => {
     if (sectionRef.current) {
@@ -38,6 +53,10 @@ export default function About({ language }) {
       }
     };
   }, []);
+
+  const toggleText = () => {
+    setShowFullText((prev) => !prev);
+  };
 
   return (
     <Element name="about-me">
@@ -92,30 +111,41 @@ export default function About({ language }) {
                 in progetti del mondo reale.
               </p>
             )}
-
-            {language === "EN" ? (
-              <p>
-                My professional journey has been diverse. I spent a decade in
-                accounting, which refined my patience and precision-skills
-                essential for identifying calculation errors. After that, I
-                explored various other fields before transitioning into
-                technology. This varied experience has broadened my perspective
-                and honed my problem-solving abilities. These diverse
-                competencies have proven to be invaluable assets in my new
-                career as a developer.
-              </p>
-            ) : (
-              <p>
-                Il mio percorso professionale è stato variegato. Ho trascorso un
-                decennio nel settore contabile, che ha affinato la mia pazienza
-                e precisione—competenze essenziali per identificare errori di
-                calcolo. Successivamente, ho esplorato vari altri campi prima di
-                passare alla tecnologia. Questa esperienza diversificata ha
-                ampliato la mia prospettiva e affinato le mie capacità di
-                problem-solving. Queste competenze diverse si sono rivelate
-                risorse inestimabili nella mia nuova carriera come sviluppatore.
-              </p>
-            )}
+            {language === "EN"
+              ? showFullText && (
+                  <p>
+                    My professional journey has been diverse. I spent a decade
+                    in accounting, which refined my patience and
+                    precision-skills essential for identifying calculation
+                    errors. After that, I explored various other fields before
+                    transitioning into technology. This varied experience has
+                    broadened my perspective and honed my problem-solving
+                    abilities. These diverse competencies have proven to be
+                    invaluable assets in my new career as a developer.
+                  </p>
+                )
+              : showFullText && (
+                  <p>
+                    Il mio percorso professionale è stato variegato. Ho
+                    trascorso un decennio nel settore contabile, che ha affinato
+                    la mia pazienza e precisione—competenze essenziali per
+                    identificare errori di calcolo. Successivamente, ho
+                    esplorato vari altri campi prima di passare alla tecnologia.
+                    Questa esperienza diversificata ha ampliato la mia
+                    prospettiva e affinato le mie capacità di problem-solving.
+                    Queste competenze diverse si sono rivelate risorse
+                    inestimabili nella mia nuova carriera come sviluppatore.
+                  </p>
+                )}
+            <button onClick={toggleText}>
+              {showFullText
+                ? language === "EN"
+                  ? "Show Less"
+                  : "Mostra Meno"
+                : language === "EN"
+                ? "Show More"
+                : "Mostra di Più"}
+            </button>
           </div>
         </div>
 
