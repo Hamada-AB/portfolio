@@ -381,6 +381,16 @@
     font-size: 1.2rem;
   }
 
+  .intro-message {
+    font-size: 20px;
+  }
+
+  /* ProjectCard */
+  .overlay-btns button {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+
   /* ProjectModal */
   .project-modal-content {
     padding: 10px;
@@ -390,13 +400,26 @@
   }
 
   .modal-btns-container {
-    gap: 15px;
-    justify-content: space-between;
+    gap: 20px;
+    justify-content: center;
   }
 
   .modal-btns-container button {
     align-items: center;
     justify-content: center;
+  }
+
+  .screen-shots-container {
+    width: 100%;
+  }
+
+  .img-slide {
+    padding: 20px !important;
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: none !important;
   }
 
   .swiper-pagination-bullet {
