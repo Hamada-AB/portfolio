@@ -50,7 +50,13 @@ export default function MenuModal({
           >
             {language === "EN" ? "CONTACT" : "CONTATTI"}
           </Link>
-          <button onClick={toggleLanguage} className="language-toggle">
+          <button
+            onClick={() => {
+              toggleLanguage();
+              toggleModal();
+            }}
+            className="language-toggle"
+          >
             {language === "EN" ? "ITALIAN" : "ENGLISH"}
           </button>
         </nav>
