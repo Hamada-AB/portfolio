@@ -126,7 +126,7 @@ export default function About({ language }) {
                   <p>
                     Il mio percorso professionale è stato variegato. Ho
                     trascorso un decennio nel settore contabile, che ha affinato
-                    la mia pazienza e precisione—competenze essenziali per
+                    la mia pazienza e precisione-competenze essenziali per
                     identificare errori di calcolo. Successivamente, ho
                     esplorato vari altri campi prima di passare alla tecnologia.
                     Questa esperienza diversificata ha ampliato la mia
