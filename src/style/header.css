@@ -93,21 +93,23 @@ header {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+
   background-color: var(--bg-color1);
 
   display: flex;
   justify-content: flex-end;
   align-items: center;
 
-  transform: translateX(100%);
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.4s;
   z-index: 300;
 }
 
 .nav-modal.open {
   transform: translateX(0);
+}
+
+.nav-modal.close {
+  transform: translateX(-100%);
 }
 
 .nav-modal-content {

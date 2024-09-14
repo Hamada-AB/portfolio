@@ -55,15 +55,13 @@ export default function Header({ language, setLanguage }) {
         </div>
       </header>
 
-      {isModalOpen && (
-        <MenuModal
-          isModalOpen={isModalOpen}
-          toggleModal={toggleModal}
-          activeSection={activeSection}
-          language={language}
-          toggleLanguage={toggleLanguage}
-        />
-      )}
+      <MenuModal
+        isModalOpen={isModalOpen}
+        toggleModal={toggleModal}
+        activeSection={activeSection}
+        language={language}
+        toggleLanguage={toggleLanguage}
+      />
     </>
   );
 }

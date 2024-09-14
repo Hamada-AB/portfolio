@@ -8,7 +8,7 @@ export default function MenuModal({
   toggleLanguage,
 }) {
   return (
-    <div className={`nav-modal ${isModalOpen ? "open" : ""}`}>
+    <div className={`nav-modal ${isModalOpen ? "open" : "close"}`}>
       <div className="nav-modal-content">
         <button className="close" onClick={toggleModal}>
           &times;
