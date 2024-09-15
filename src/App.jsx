@@ -9,6 +9,18 @@ import DevelopmentModal from "./components/DevelopmentModal";
 
 export default function App() {
   const [language, setLanguage] = useState("EN");
+  const [winWidth, setWinWidth] = useState(window.innerWidth);
+
+  function getWinWidth() {
+    setWinWidth(window.innerWidth);
+  }
+
+  useEffect(() => {
+    window.addEventListener("resize", getWinWidth);
+    return () => {
+      window.removeEventListener("resize", getWinWidth);
+    };
+  }, []);
 
   useEffect(() => {
     // Detect the user's language preference
@@ -26,7 +38,7 @@ export default function App() {
     <>
       <DevelopmentModal language={language} />
       <Header language={language} setLanguage={setLanguage} />
-      <MainSection language={language} />
+      <MainSection language={language} winWidth={winWidth} />
       <Footer />
     </>
   );

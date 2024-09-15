@@ -5,22 +5,10 @@ import portfolioImg from "../assets/image/my-photo.jpg";
 // Components
 import TechCarousel from "./TechCarousel";
 
-export default function About({ language }) {
+export default function About({ language, winWidth }) {
   const sectionRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
-  const [winWidth, setWinWidth] = useState(window.innerWidth);
   const [showFullText, setShowFullText] = useState(winWidth > 1000);
-
-  function getWinWidth() {
-    setWinWidth(window.innerWidth);
-  }
-
-  useEffect(() => {
-    window.addEventListener("resize", getWinWidth);
-    return () => {
-      window.removeEventListener("resize", getWinWidth);
-    };
-  }, []);
 
   useEffect(() => {
     if (sectionRef.current) {
