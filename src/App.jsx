@@ -10,6 +10,7 @@ import DevelopmentModal from "./components/DevelopmentModal";
 export default function App() {
   const [language, setLanguage] = useState("EN");
   const [winWidth, setWinWidth] = useState(window.innerWidth);
+  console.log(winWidth);
 
   function getWinWidth() {
     setWinWidth(window.innerWidth);
@@ -36,7 +37,7 @@ export default function App() {
 
   return (
     <>
-      <DevelopmentModal language={language} />
+      {winWidth < 960 && <DevelopmentModal language={language} />}
       <Header language={language} setLanguage={setLanguage} />
       <MainSection language={language} winWidth={winWidth} />
       <Footer />
