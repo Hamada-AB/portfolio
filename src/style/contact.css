@@ -78,6 +78,7 @@
   border-radius: 8px;
   border: 1px solid #95c0f27a;
   position: relative;
+  user-select: none;
 }
 
 .inputs-container {
@@ -245,6 +246,14 @@
 
   .contact-form {
     padding: 15px;
+  }
+
+  .contact-form button:hover {
+    background-color: #67aeff;
+  }
+
+  .contact-form button:active {
+    background-color: #67aeff;
   }
 
   .success-message {
