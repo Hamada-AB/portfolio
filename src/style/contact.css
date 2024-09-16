@@ -248,9 +248,10 @@
   }
 
   .success-message {
+    background-color: #536075fc;
     top: 33%;
     bottom: 33%;
-    left: 5%;
-    right: 5%;
+    left: 2%;
+    right: 2%;
   }
 }
