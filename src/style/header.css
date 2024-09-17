@@ -96,7 +96,7 @@ header {
 
   background-color: var(--bg-color1);
 
-  display: flex;
+  display: none;
   justify-content: flex-end;
   align-items: center;
 
@@ -166,6 +166,10 @@ header {
 @media (max-width: 768px) {
   .desktop-nav {
     display: none;
+  }
+
+  .nav-modal {
+    display: flex;
   }
 
   .menu-icon {
